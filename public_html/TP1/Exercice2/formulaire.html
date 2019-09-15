@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulaire</title>
+    <link rel="stylesheet" href="Style/Home.css">
 </head>
 <body>
-    <form action="listePost.php" method="Post">
-        First name:<br>
-        <input type="text" name="nbItems" value="20">
-        <br>
-        <br><br>
-        <input type="submit" value="Submit">
+    <form id="msform" action="listePost.php" method="Post">
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">Generateur d'items</h2>
+            <h3 class="fs-subtitle">rentrer un nombre d'items</h3>
+            <input type="text" name="nbItems" placeholder="10"/>
+            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+        </fieldset>
     </form>
 </body>
 </html>
