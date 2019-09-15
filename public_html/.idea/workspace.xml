@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ff144e5-7a1e-469f-bd8c-f0a9ee5d5315" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice3/resetCounter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice4/counter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice4/resetCounter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP1/Exercice3/counter.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice3/counter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/Exercice4/counter.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice4/counter.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +63,7 @@
       <workItem from="1568211958577" duration="228000" />
       <workItem from="1568212229228" duration="338000" />
       <workItem from="1568213397455" duration="1660000" />
-      <workItem from="1568555692071" duration="10237000" />
+      <workItem from="1568555692071" duration="10338000" />
     </task>
     <task id="LOCAL-00001" summary="test configuration git other pc">
       <created>1568555939660</created>
@@ -104,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568563334250</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Exercice 3 et 4 fini">
+      <created>1568567188683</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568567188683</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +130,7 @@
     <MESSAGE value="Exercice 2 fini avec bug postman et get" />
     <MESSAGE value="Exercice 2 fini avec bug postman" />
     <MESSAGE value="Exercice 2 : verification variable et protection XSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exercice 2 : verification variable et protection XSS" />
+    <MESSAGE value="Exercice 3 et 4 fini" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exercice 3 et 4 fini" />
   </component>
 </project>

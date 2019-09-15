@@ -15,6 +15,7 @@ else {
 }
 echo 'Vous vous êtes connécté ' . $_COOKIE["nbConnexion"] . ' fois !';
 ?>
+<a href="http://w31.local/TP1/Exercice4/resetCounter.php">reset</a>
 </body>
 </html>
 
