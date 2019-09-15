@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ff144e5-7a1e-469f-bd8c-f0a9ee5d5315" name="Default Changelist" comment="Exercice 2 fini avec bug postman et get">
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice2/formulaire.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice2/liste.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice2/listeGet.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice2/listePost.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP1/Exercice3/counter.php" afterDir="false" />
+    <list default="true" id="9ff144e5-7a1e-469f-bd8c-f0a9ee5d5315" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP1/bonjour.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice1/bonjour.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP1/bonjourGet.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice1/bonjourGet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP1/bonjourPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice1/bonjourPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP1/formulaire.html" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice1/formulaire.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/Exercice2/listeGet.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice2/listeGet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1/Exercice2/listePost.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP1/Exercice2/listePost.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +64,7 @@
       <workItem from="1568211958577" duration="228000" />
       <workItem from="1568212229228" duration="338000" />
       <workItem from="1568213397455" duration="1660000" />
-      <workItem from="1568555692071" duration="6212000" />
+      <workItem from="1568555692071" duration="7336000" />
     </task>
     <task id="LOCAL-00001" summary="test configuration git other pc">
       <created>1568555939660</created>
@@ -94,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568556822275</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Exercice 2 fini avec bug postman">
+      <created>1568562214604</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568562214604</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +115,7 @@
     <MESSAGE value="test configuration git other pc" />
     <MESSAGE value="Exercice 1.5 fini" />
     <MESSAGE value="Exercice 2 fini avec bug postman et get" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exercice 2 fini avec bug postman et get" />
+    <MESSAGE value="Exercice 2 fini avec bug postman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exercice 2 fini avec bug postman" />
   </component>
 </project>

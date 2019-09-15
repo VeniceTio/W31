@@ -8,8 +8,9 @@
 <?php
 echo $_GET['nbItems'];
 if ( isset($_GET['nbItems'])){
+    $val = (int) htmlentities($_GET['nbItems']);
     $listeElement = [];
-    for ($i = 0; $i < $_GET['nbItems']; $i++) {
+    for ($i = 0; $i < $val; $i++) {
         $listeElement[] = rand();
     }
     echo '<ul>';
