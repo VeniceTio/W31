@@ -7,8 +7,12 @@
 <body>
 
 <?php
-if (isset($_POST['module'])) {
-    echo 'Le module s\'appelle ' . htmlspecialchars($_GET['module']) . '.<br>';
+if ($_SERVER['REQUEST_METHOD']!='POST'){
+    header('Location: http://w31.local/TP1/formulaire.html');
+    exit();
+}
+if (isset($_POST['firstname'])) {
+    echo 'Salut ' . htmlspecialchars($_POST['firstname']) . '!<br>';
 }
 else {
     echo 'aucun module rempli';
