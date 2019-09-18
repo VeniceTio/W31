@@ -51,7 +51,7 @@ login@ordi:~$ ls ~/.ssh
 2 - Copier la clé publique dans Gitlab
 --------------------------------------
 
-![](images/sshGitlab.gif)
+*Un GIF illustrant les 8 points suivants est disponible dans `images/sshGitlab.gif`.*
 
 1. Connectez-vous sur Gitlab avec vos identifiants Unistra : https://git.unistra.fr
 2. Cliquez sur l'icône en haut à droite de l'écran

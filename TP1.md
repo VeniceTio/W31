@@ -17,11 +17,11 @@ Exercice 1 - Bonjour
 2. Écrivez un fichier `bonjourGet.php` qui contient la structure de base d'un fichier HTML5 valide.
     - Dans le `<body>`, ajoutez du code PHP qui affiche le contenu de la variable `module` du tableau `$_GET`.
     - Testez avec Postman et votre navigateur, en transmettant ou nom une variable via la méthode `GET`.
-    - Ajoutez un **test** pour vérifier que la variable existe et n'est pas vide. Affichez un message si la condition n'est pas remplit.
+    - Ajoutez un **test** pour vérifier que la variable existe et n'est pas vide. Affichez un message si la condition n'est pas remplie.
     - **Sécurisez** la variable
 
 3. Écrivez un fichier `bonjourPost.php` qui contient la structure de base d'un fichier HTML5 valide.
-    - Dans le `<body>` de `bonjour.php`, affichez le contenu des variables `firstname` et `lastname` du tableau `$_POST`
+    - Affichez le contenu des variables `firstname` et `lastname` du tableau `$_POST` dans le `<body>`
     - Testez avec Postman en transmettant 0, 1 ou les 2 variables via la méthode `POST`
     - Ajoutez le test d'existence des deux variables et **sécurisez-les**.
 
@@ -34,13 +34,13 @@ Exercice 2 - Générer une liste
 ------------------------------
 
 1. Écrivez un fichier PHP `liste.php` qui produit un document HTML contenant
-**une liste de 10 items** générés en PHP avec une boucle `for`. Testez avec Postman et votre navigateur. Pensez à ajouter un test pour vérifier que votre variable est un entier et transtypez-la (cast).
+**une liste de 10 items** générés en PHP avec une boucle `for`. Testez avec Postman et votre navigateur.
 
 2. Écrivez un fichier PHP `listeGet.php` similaire à `liste.php`, où le
-nombre d'items à générer est disponible dans **la variable `nbItems` du tableau `$_GET`**. Testez avec Postamn et un navigateur.
+nombre d'items à générer est disponible dans **la variable `nbItems` du tableau `$_GET`**. Testez avec Postman et un navigateur. Pensez à ajouter un test pour vérifier que votre variable est un entier et transtypez-la (cast).
 
 3. Écrire un fichier PHP `listePost.php` similaire à `liste.php`, où le
-nombre d'items à générer est disponible dans **la variable `nbItems` du tableau `$_POST`**. Testez avec Postamn.
+nombre d'items à générer est disponible dans **la variable `nbItems` du tableau `$_POST`**. Testez avec Postman.
 
 4. Tester le 3. avec votre navigateur. Pour cela, créez un fichier PHP contenant un **formulaire** avec `listesPost.php` pour action.
 
@@ -65,7 +65,7 @@ Exercice 3 - Compteur de visites en session
 
 4. Dans Postman ou votre navigateur, supprimez le cookie de session `PHPSSID` puis rechargez la page. Que se passe-t-il ?
 
-5. Réalisez un schéma comportant un navigateur, un serveur web et un module PHP. Présentez à l'aide de flèches et de numéros la série de requêtes/réponses qui sont échangées lorsque vous cliquez sur le lien ajouté à la question précédente. Pour chaque numéro :
+5. Réalisez un schéma comportant un navigateur, un serveur web et un module PHP. Présentez à l'aide de flèches et de numéros la série de requêtes/réponses qui sont échangées lorsque vous cliquez sur le lien ajouté à la question 3. Pour chaque numéro :
     - expliquer brièvement l'objet de la requête/réponse : qui envoie/réceptionne ?
     - indiquez le contenu de la requête/réponse : entête, corps, variables, etc.
 
