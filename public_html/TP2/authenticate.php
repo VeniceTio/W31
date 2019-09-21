@@ -8,13 +8,13 @@ else{
         if($users[$_POST['login']]==$_POST['pass']){
             session_start();
             $_SESSION['login']=$_POST['login'];
-            header('Location: http://tp2.local/welcome.php');
+            header('Location: http://w31.local/TP2/welcome.php');
         }
         else{
-            header('Location: http://tp2.local/signin.php');
+            header('Location: http://w31.local/TP2/signin.php');
         }
     }
     else{
-        header('Location: http://tp2.local/signin.php');
+        header('Location: http://w31.local/TP2/signin.php');
     }
 }

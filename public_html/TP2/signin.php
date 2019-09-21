@@ -10,7 +10,7 @@
 
 <body>
     <!-- multistep form -->
-    <form id="msform" action="authenticate.php" method="post">
+    <form id="msform" action="http://w31.local/TP2/authenticate.php" method="post">
         <!-- fieldsets -->
         <fieldset>
             <h2 class="fs-title">authentification</h2>
