@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9ff144e5-7a1e-469f-bd8c-f0a9ee5d5315" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/signin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TP2/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/signout.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/signout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568567308596</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adaptation des lien">
+      <created>1569066104925</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569066104925</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +182,7 @@
     <MESSAGE value="Exercice 2 : verification variable et protection XSS" />
     <MESSAGE value="Exercice 3 et 4 fini" />
     <MESSAGE value="Exercice 4 integration lien reset" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exercice 4 integration lien reset" />
+    <MESSAGE value="adaptation des lien" />
+    <option name="LAST_COMMIT_MESSAGE" value="adaptation des lien" />
   </component>
 </project>
