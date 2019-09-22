@@ -5,9 +5,11 @@ if($_SERVER['REQUEST_METHOD'] != 'POST'){
 else{
     include("users.php");
     session_start();
-    if(array_key_exists($_POST['login'],$users)){
-        if($users[$_POST['login']]==$_POST['pass']){
-            $_SESSION['login']=$_POST['login'];
+    $login = htmlentities($_POST['login']);
+    $password = htmlentities($_POST['pass']);
+    if(array_key_exists($login,$users)){
+        if($users[$login]==sha1($password)){
+            $_SESSION['login']=$login;
             header('Location: http://w31.local/TP2/welcome.php');
         }
         else{

@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/TP2/Style/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/Style/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/authenticate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/signin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP2/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/users.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569068270414</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Exercice 6 fini">
+      <created>1569074843132</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1569074843132</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +201,7 @@
     <MESSAGE value="Exercice 4 integration lien reset" />
     <MESSAGE value="adaptation des lien" />
     <MESSAGE value="Exercice 5 fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exercice 5 fini" />
+    <MESSAGE value="Exercice 6 fini" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exercice 6 fini" />
   </component>
 </project>
