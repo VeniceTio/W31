@@ -10,10 +10,10 @@ session_start()
 </head>
 <body>
     <!-- multistep form -->
-    <form id="msform" action="http://tp2.local/authenticate.php" method="post">
+    <form id="msform" action="http://tp3.local/authenticate.php" method="post">
         <!-- fieldsets -->
         <fieldset>
-            <h2 class="fs-title">authentification</h2>
+            <h2 class="fs-title">authentification <?php echo password_hash('123',PASSWORD_DEFAULT);?></h2>
             <input type="text" name="login" placeholder="login"/>
             <input type="password" name="pass" placeholder="Password"/>
             <h4><?php if (isset($_SESSION['message'])) {echo $_SESSION['message'];}?></h4>

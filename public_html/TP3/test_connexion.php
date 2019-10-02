@@ -15,9 +15,8 @@ catch(PDOException $e){
 
 $login = htmlspecialchars($_GET['login']);
 $password = htmlspecialchars($_GET['password']);
-$result = $pdo->prepare("SELECT * FROM user WHERE login = :login AND password = :password");
+$result = $pdo->prepare("SELECT * FROM user WHERE login = :login");
 $result->bindValue(':login',$_GET['login'],PDO::PARAM_STR);
-$result->bindValue('pasword',$_GET['password'],PDO::PARAM_STR);
 $result->execute();
 
 foreach ($result as $row){
