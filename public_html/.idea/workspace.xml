@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ff144e5-7a1e-469f-bd8c-f0a9ee5d5315" name="Default Changelist" comment="">
+    <list default="true" id="9ff144e5-7a1e-469f-bd8c-f0a9ee5d5315" name="Default Changelist" comment="ajout css fadeIn and fix bug php signin&#10;ajout test_connexion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TP2/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/TP2/users.php" afterDir="false" />
     </list>
@@ -42,9 +42,9 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TP2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -69,7 +69,10 @@
     </option>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\TheWitcher\AppData\Roaming\Subversion</configuration>
+    <option name="sshConnectionType" value="PRIVATE_KEY" />
+    <option name="sshUserName" value="ylouazel" />
+    <option name="sshPrivateKeyPath" value="C:\Users\TheWitcher\Documents\id_rsa.pub" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -84,6 +87,7 @@
       <workItem from="1568555692071" duration="12439000" />
       <workItem from="1568814443160" duration="904000" />
       <workItem from="1568815401127" duration="5293000" />
+      <workItem from="1570002785285" duration="7412000" />
     </task>
     <task id="LOCAL-00001" summary="test configuration git other pc">
       <created>1568555939660</created>
@@ -207,6 +211,8 @@
     <MESSAGE value="Exercice 5 fini" />
     <MESSAGE value="Exercice 6 fini" />
     <MESSAGE value="ajout du mdp en sha1" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout du mdp en sha1" />
+    <MESSAGE value="ajout css fadeIn and fix bug php signin" />
+    <MESSAGE value="ajout css fadeIn and fix bug php signin&#10;ajout test_connexion" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout css fadeIn and fix bug php signin&#10;ajout test_connexion" />
   </component>
 </project>

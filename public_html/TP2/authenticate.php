@@ -10,15 +10,15 @@ else{
     if(array_key_exists($login,$users)){
         if($users[$login]==sha1($password)){
             $_SESSION['login']=$login;
-            header('Location: http://w31.local/TP2/welcome.php');
+            header('Location: http://tp2.local/welcome.php');
         }
         else{
             $_SESSION['message']='Wrong password';
-            header('Location: http://w31.local/TP2/signin.php');
+            header('Location: http://tp2.local/signin.php');
         }
     }
     else{
         $_SESSION['message']='Wrong login';
-        header('Location: http://w31.local/TP2/signin.php');
+        header('Location: http://tp2.local/signin.php');
     }
 }
