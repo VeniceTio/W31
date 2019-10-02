@@ -1,11 +1,16 @@
 W31 - Programmation web côté serveur
 ====================================
 
-Nous mettrons sur ce dépôt toutes les resources pour les TDs, TPS.
-Il sera impératif de savoir l'utiliser pour le TP noté.
-Suivez les instructions ci-dessous pour mettre en place votre environnement de travail.
+#### IMPORTANT : Il sera impératif de savoir utiliser ce dépôt pour le TP noté.
 
-Pour les questions sur l'**utilisation** de votre dépôt, regardez la page [HOWTO](HOWTO.md).
+Pour démarrer, vous devez :
+1. Mettre en place une clé SSH en suivant le tuto [GITLABSSH.md](GITLABSSH.md)
+2. Mettre en place votre environnement de travail en suivez les instructions ci-dessous.
+
+Ensuite, pour **utiliser** de votre dépôt, regardez la page [HOWTO.md](HOWTO.md).
+
+#### Les diapos des cours :
+- [CM n°1 : Introduction à PHP](http://adrien.krahenbuhl.fr/courses/IUTRS/W31/CM1)
 
 1 - Créer un **clône distant** sur Gitlab
 -----------------------------------------
