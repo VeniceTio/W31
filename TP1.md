@@ -59,7 +59,7 @@ Exercice 3 - Compteur de visites en session
     1. réinitialise le compteur présent dans la session
     2. effectue une demande de redirection vers le fichier `counter.php` (regardez la doc de la directive [`header`](http://php.net/manual/fr/function.header.php)).
 
-    *Note* : ce script doit contenir exactement 3 instructions.
+    > **Note** : ce script doit contenir exactement 3 instructions.
 
 3. Ajoutez un lien HTML vers le script `resetCounter.php` dans le `<body>` renvoyé par `counter.php`. Testez dans votre navigateur.
 

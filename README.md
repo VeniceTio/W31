@@ -10,7 +10,9 @@ Pour démarrer, vous devez :
 Ensuite, pour **utiliser** de votre dépôt, regardez la page [HOWTO.md](HOWTO.md).
 
 #### Les diapos des cours :
+
 - [CM n°1 : Introduction à PHP](http://adrien.krahenbuhl.fr/courses/IUTRS/W31/CM1)
+- [CM n°2 : POO et PDO](http://adrien.krahenbuhl.fr/courses/IUTRS/W31/CM2)
 
 1 - Créer un **clône distant** sur Gitlab
 -----------------------------------------
