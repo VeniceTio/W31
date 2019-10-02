@@ -37,7 +37,7 @@ Créez ce tableau avec quelques utilisateurs de votre imagination.
 Exercice 3 : Authentification
 -----------------------------
 
-*Note* : ce fichier ne comportera aucun code HTML.
+> **Note** : ce fichier ne comportera aucun code HTML.
 
 Complétez le script PHP `authenticate.php` qui traite la requête HTTP POST du formulaire `signin.php` comme suit :
 
@@ -87,7 +87,5 @@ Cet exercice propose de mettre en place un système de messages affichés sur la
 Pour les plus rapides
 ---------------------
 
-- Niveau 1 : Ajoutez un fichier de style CSS pour mettre en forme votre
-formulaire.
-- Niveau 2 : Utilisez [Bootstrap](https://getbootstrap.com) pour mettre en
-forme vos différentes pages.
+- Niveau 1 : Ajoutez un fichier de style CSS pour mettre en forme votre formulaire.
+- Niveau 2 : Utilisez [Bootstrap](https://getbootstrap.com) pour mettre en forme vos différentes pages.
