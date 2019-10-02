@@ -18,7 +18,7 @@ Cet exercice vous propose de mettre en place une gestion des utilisateurs dans u
 Exercice 1 : Mise en place de la BDD
 ------------------------------------
 
-1. Créer une nouvelle base de données `W31` à partir de [webetu](http://https://webetu.iutrs.unistra.fr/)
+1. Créer une nouvelle base de données `W31` à partir de [webetu](https://webetu.iutrs.unistra.fr/)
 2. Créer une table `Users` permettant de stocker les logins et mot de passe des utilisateurs. Réfléchissez bien aux champs et attributs des champs : auto-increment, unique, null, etc.
 3. Ajouter manuellement plusieurs utilisateurs
 
