@@ -71,7 +71,7 @@ body {
 #msform .action-button, a {
     width: 100px;
     background: #27AE60;
-    font-weight: bold;
+    font-weight: normal;
     color: white;
     border: 0 none;
     border-radius: 1px;
@@ -79,8 +79,8 @@ body {
     padding: 10px 5px;
     margin: 10px 5px;
 }
-#msform .action-button:hover, #msform .action-button:focus, a:hover,a:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #4CAF50;
 }
 
 /*headings*/
@@ -97,6 +97,7 @@ body {
     margin-bottom: 20px;
 }
 a{
+    color: #4CAF50;
     text-decoration: none;
 }
 h4 {
@@ -109,6 +110,20 @@ h4 {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
+}
+.message, .ac {
+    font-size: 12px;
+    font-weight: lighter;
+}
+.message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+
+}
+.ac {
+    color: #4CAF50;
+    text-decoration: none;
+    background: none;
 }
 
 

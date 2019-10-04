@@ -14,12 +14,28 @@ session_start()
         <!-- fieldsets -->
         <fieldset>
             <h2 class="fs-title">Sign up</h2>
-            <input type="text" name="login" placeholder="Login" value="<?php if (isset($_SESSION['loginUp'])) {echo $_SESSION['loginUp'];}else{echo "login";}?>"/>
-            <input type="password" name="pass" placeholder="Password"/>
-            <input type="password" name="rpass" placeholder="Repeat password"/>
-            <h4><?php if (isset($_SESSION['messageInscription'])) {echo $_SESSION['messageInscription'];}?></h4>
+            <input type="text" name="login" placeholder="Login" value="<?php if (isset($_SESSION['loginUp'])) {echo $_SESSION['loginUp'];unset($_SESSION['loginUp']);}?>"/>
+            <input type="password" id="pass" name="pass" placeholder="Password"/>
+            <input type="password" id="rpass" oninput="checkPassword()" name="rpass" placeholder="Repeat password"/>
+            <h4>
+                <?php
+                if (isset($_SESSION['messageInscription']) && !empty($_SESSION['messageInscription'])) {
+                    echo $_SESSION['messageInscription'];
+                    unset($_SESSION['messageInscription']);
+                }?>
+            </h4>
             <input type="submit" name="submit" class="submit action-button" value="Sign up"/>
+            <h5 class="message">Already registered ?<a class="ac" href="http://tp3.local/signin.php">Sign in</a></h5>
         </fieldset>
     </form>
+<script type="text/javascript" language="JavaScript">
+    function checkPassword(){
+        var element = document.getElementById("pass");
+        var element2 = document.getElementById("rpass");
+        if (element.innerText==element2.innerText){
+            element2.setCustomValidity("Wrong Password");
+        }
+    }
+</script>
 </body>
 </html>

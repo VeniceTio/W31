@@ -19,6 +19,9 @@ else{
     $result->execute();
 
     session_start();
+    if (isset($_SESSION['message'])){
+        unset($_SESSION['message']);
+    }
     if ($result->rowCount()!=0){
         $donne = $result->fetch();
         if (password_verify($pass,$donne['password'])) {
@@ -35,24 +38,4 @@ else{
         $_SESSION['message']='Wrong login';
         header('Location: http://tp3.local/signin.php');
     }
-
-/*
-    session_start();
-    $login = htmlentities($_POST['login']);
-    $password = htmlentities($_POST['pass']);
-    if(array_key_exists($login,$users)){
-        if($users[$login]==sha1($password)){
-            $_SESSION['login']=$login;
-            header('Location: http://tp2.local/welcome.php');
-        }
-        else{
-            $_SESSION['message']='Wrong password';
-            header('Location: http://tp2.local/signin.php');
-        }
-    }
-    else{
-        $_SESSION['message']='Wrong login';
-        header('Location: http://tp2.local/signin.php');
-    }
-*/
 }

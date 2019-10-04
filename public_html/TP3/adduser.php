@@ -38,7 +38,7 @@ else {
         }
         else {
             $_SESSION['messageInscription']="Wrong password";
-            $_SESSION['loginUp']=$login;
+            if (isset($login)){$_SESSION['loginUp']=$login;}
             header('Location: http://tp3.local/signup.php');
             exit();
         }
