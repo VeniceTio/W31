@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="sql dsn">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP3/bdd.php" afterDir="false" />
+    <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/TheWitcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/TP3/adduser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/TP3/signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP2/test connexion.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/TP3/authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/authenticate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/TP3/signin.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/signin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/signout.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/signout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/test_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/test_connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/TP3/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/welcome.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570023652512</updated>
-      <workItem from="1570023654224" duration="6375000" />
+      <workItem from="1570023654224" duration="9768000" />
     </task>
     <task id="LOCAL-00001" summary="testconnection">
       <created>1570025026388</created>
@@ -89,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570026527467</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="bsd intégré">
+      <created>1570030264181</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570030264181</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +115,7 @@
     <MESSAGE value="testconnection" />
     <MESSAGE value="création TP3" />
     <MESSAGE value="sql dsn" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql dsn" />
+    <MESSAGE value="bsd intégré" />
+    <option name="LAST_COMMIT_MESSAGE" value="bsd intégré" />
   </component>
 </project>

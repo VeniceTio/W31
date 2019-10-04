@@ -11,7 +11,7 @@ if (!isset($_SESSION['login'])){
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Style/Home.css">
-    <title>TP2</title>
+    <title>TP3</title>
 </head>
 
 <body>

@@ -13,6 +13,7 @@ else{
         exit();
     }
     $login = htmlspecialchars($_POST['login']);
+    $pass = htmlspecialchars($_POST['pass']);
     $result = $pdo->prepare("SELECT * FROM users WHERE login = :login");
     $result->bindValue(':login',$login,PDO::PARAM_STR);
     $result->execute();
@@ -20,7 +21,7 @@ else{
     session_start();
     if ($result->rowCount()!=0){
         $donne = $result->fetch();
-        if (password_verify($_POST,$donne['password'])) {
+        if (password_verify($pass,$donne['password'])) {
             $_SESSION['login']=$login;
             header('Location: http://tp3.local/welcome.php');
             exit();

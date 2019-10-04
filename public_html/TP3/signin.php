@@ -6,14 +6,14 @@ session_start()
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="Style/Home.css">
-    <title>TP2</title>
+    <title>TP3</title>
 </head>
 <body>
     <!-- multistep form -->
     <form id="msform" action="http://tp3.local/authenticate.php" method="post">
         <!-- fieldsets -->
         <fieldset>
-            <h2 class="fs-title">authentification <?php echo password_hash('123',PASSWORD_DEFAULT);?></h2>
+            <h2 class="fs-title">authentification</h2>
             <input type="text" name="login" placeholder="login"/>
             <input type="password" name="pass" placeholder="Password"/>
             <h4><?php if (isset($_SESSION['message'])) {echo $_SESSION['message'];}?></h4>
