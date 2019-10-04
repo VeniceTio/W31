@@ -24,7 +24,7 @@ else{
     }
     if ($result->rowCount()!=0){
         $donne = $result->fetch();
-        if (password_verify($pass,$donne['password'])) {
+        if (sha1($pass)==$donne['password']) {
             $_SESSION['login']=$login;
             header('Location: http://tp3.local/welcome.php');
             exit();

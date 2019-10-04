@@ -14,9 +14,9 @@ session_start()
         <!-- fieldsets -->
         <fieldset>
             <h2 class="fs-title">Sign up</h2>
-            <input type="text" name="login" placeholder="Login" value="<?php if (isset($_SESSION['loginUp'])) {echo $_SESSION['loginUp'];unset($_SESSION['loginUp']);}?>"/>
-            <input type="password" id="pass" name="pass" placeholder="Password"/>
-            <input type="password" id="rpass" oninput="checkPassword()" name="rpass" placeholder="Repeat password"/>
+            <input type="text" name="login" placeholder="Login" value="<?php if (isset($_SESSION['loginUp'])) {echo $_SESSION['loginUp'];unset($_SESSION['loginUp']);}?>" required/>
+            <input type="password" id="pass" name="pass" placeholder="Password" required/>
+            <input type="password" id="rpass" oninput="checkPassword(this)" name="rpass" placeholder="Repeat password" required/>
             <h4>
                 <?php
                 if (isset($_SESSION['messageInscription']) && !empty($_SESSION['messageInscription'])) {
@@ -29,11 +29,13 @@ session_start()
         </fieldset>
     </form>
 <script type="text/javascript" language="JavaScript">
-    function checkPassword(){
-        var element = document.getElementById("pass");
-        var element2 = document.getElementById("rpass");
-        if (element.innerText==element2.innerText){
-            element2.setCustomValidity("Wrong Password");
+    function checkPassword(input){
+        const element = document.getElementById("pass").value;
+        if (element !== input.value){
+            input.setCustomValidity("Wrong Password");
+        }
+        else{
+            input.setCustomValidity("");
         }
     }
 </script>

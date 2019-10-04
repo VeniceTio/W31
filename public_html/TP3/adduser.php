@@ -1,6 +1,8 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] != 'POST'){
-    header('Location: http://tp3.local/signin.php');
+session_start();
+if($_SERVER['REQUEST_METHOD'] != 'POST' || empty(htmlspecialchars($_POST['login'])) || empty(htmlspecialchars($_POST['pass'])) || empty(htmlspecialchars($_POST['rpass'])) ){
+    $_SESSION['messageInscription']="Fill all the fields";
+    header('Location: http://tp3.local/signup.php');
     exit();
 }
 else {
@@ -19,12 +21,11 @@ else {
     $result->bindValue(':login', $login, PDO::PARAM_STR);
     $result->execute();
 
-    session_start();
     if ($result->rowCount()==0) {
         if($pass == $rpass) {
             $result = $pdo->prepare("INSERT INTO users (login,password) VALUES (:login,:password)");
             $result->bindValue(':login', $login, PDO::PARAM_STR);
-            $result->bindValue(':password', password_hash($pass,PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $result->bindValue(':password', sha1($pass), PDO::PARAM_STR);
             $succes = $result->execute();
             if (succes){
                 header('Location: http://tp3.local/signin.php');
