@@ -2,7 +2,7 @@
 session_start();
 if($_SERVER['REQUEST_METHOD'] != 'POST' || empty(htmlspecialchars($_POST['login'])) || empty(htmlspecialchars($_POST['pass'])) || empty(htmlspecialchars($_POST['rpass'])) ){
     $_SESSION['messageInscription']="Fill all the fields";
-    header('Location: http://tp3.local/signup.php');
+    header('Location: http://tp4.local/signup.php');
     exit();
 }
 else {
@@ -28,25 +28,25 @@ else {
             $result->bindValue(':password', sha1($pass), PDO::PARAM_STR);
             $succes = $result->execute();
             if (succes){
-                header('Location: http://tp3.local/signin.php');
+                header('Location: http://tp4.local/signin.php');
                 exit();
             }
             else {
                 $_SESSION['messageInscription']="Request Error";
-                header('Location: http://tp3.local/signup.php');
+                header('Location: http://tp4.local/signup.php');
                 exit();
             }
         }
         else {
             $_SESSION['messageInscription']="Wrong password";
             if (isset($login)){$_SESSION['loginUp']=$login;}
-            header('Location: http://tp3.local/signup.php');
+            header('Location: http://tp4.local/signup.php');
             exit();
         }
     }
     else{
         $_SESSION['messageInscription']="login is used";
-        header('Location: http://tp3.local/signup.php');
+        header('Location: http://tp4.local/signup.php');
         exit();
     }
 }

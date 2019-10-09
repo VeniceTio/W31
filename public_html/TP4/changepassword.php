@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['login']) && $_SERVER['REQUEST_METHOD'] != 'POST'){
-    header('Location: http://tp3.local/signin.php');
+    header('Location: http://tp4.local/signin.php');
 }
 else{
     include("bdd.php");
@@ -19,4 +19,5 @@ else{
     $result->bindValue(':login',$login,PDO::PARAM_STR);
     $result->bindValue(':password',sha1($pass),PDO::PARAM_STR);
     $result->execute();
+    var_dump($result);
 }

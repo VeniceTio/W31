@@ -10,7 +10,7 @@ session_start()
 </head>
 <body>
     <!-- multistep form -->
-    <form id="msform" action="http://tp3.local/adduser.php" method="post">
+    <form id="msform" action="http://tp4.local/adduser.php" method="post">
         <!-- fieldsets -->
         <fieldset>
             <h2 class="fs-title">Sign up</h2>
@@ -25,7 +25,7 @@ session_start()
                 }?>
             </h4>
             <input type="submit" name="submit" class="submit action-button" value="Sign up"/>
-            <h5 class="message">Already registered ?<a class="ac" href="http://tp3.local/signin.php">Sign in</a></h5>
+            <h5 class="message">Already registered ?<a class="ac" href="http://tp4.local/signin.php">Sign in</a></h5>
         </fieldset>
     </form>
 <script type="text/javascript" language="JavaScript">

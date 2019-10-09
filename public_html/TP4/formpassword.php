@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['login'])){
-    header('Location: http://tp3.local/signin.php');
+    header('Location: http://tp4.local/signin.php');
 }
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ if (!isset($_SESSION['login'])){
 </head>
 <body>
 <!-- multistep form -->
-<form id="msform" action="http://tp3.local/changepassword.php" method="post">
+<form id="msform" action="http://tp4.local/changepassword.php" method="post">
     <!-- fieldsets -->
     <fieldset>
         <h2 class="fs-title">Change your password</h2>

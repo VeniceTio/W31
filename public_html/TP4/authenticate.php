@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] != 'POST'){
-    header('Location: http://tp3.local/signin.php');
+    header('Location: http://tp4.local/signin.php');
 }
 else{
     include("bdd.php");
@@ -26,16 +26,16 @@ else{
         $donne = $result->fetch();
         if (sha1($pass)==$donne['password']) {
             $_SESSION['login']=$login;
-            header('Location: http://tp3.local/welcome.php');
+            header('Location: http://tp4.local/welcome.php');
             exit();
         }
         else {
             $_SESSION['message']='Wrong password';
-            header('Location: http://tp3.local/signin.php');
+            header('Location: http://tp4.local/signin.php');
         }
     }
     else {
         $_SESSION['message']='Wrong login';
-        header('Location: http://tp3.local/signin.php');
+        header('Location: http://tp4.local/signin.php');
     }
 }
