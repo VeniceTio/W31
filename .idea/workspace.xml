@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/Style/Home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/adduser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/bdd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/signin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/signout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/signup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/test_connexion.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public_html/TP4/welcome.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/TP4/changepassword.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/TP4/formpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +46,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ProgramData)\Wamp\www\W31\public_html" />
       <recent name="D:\ProgramData)\Wamp\www\W31\W31\public_html\TP3" />
     </key>
   </component>
@@ -126,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570626376737</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="TP4 init">
+      <created>1570631695805</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570631695805</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +154,7 @@
     <MESSAGE value="bsd intégré" />
     <MESSAGE value="ajout signup et adduser" />
     <MESSAGE value="mise à jour bsd en ligne chez infomaniak" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise à jour bsd en ligne chez infomaniak" />
+    <MESSAGE value="TP4 init" />
+    <option name="LAST_COMMIT_MESSAGE" value="TP4 init" />
   </component>
 </project>
