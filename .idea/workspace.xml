@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/adduser.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/adduser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/users.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/TP3/bdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/bdd.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +60,7 @@
       <updated>1570023652512</updated>
       <workItem from="1570023654224" duration="14333000" />
       <workItem from="1570200958176" duration="4683000" />
+      <workItem from="1570626216254" duration="113000" />
     </task>
     <task id="LOCAL-00001" summary="testconnection">
       <created>1570025026388</created>
