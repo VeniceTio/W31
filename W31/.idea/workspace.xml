@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/bdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/bdd.php" afterDir="false" />
-    </list>
+    <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,20 +13,6 @@
       <executable />
     </execution>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -38,10 +21,10 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion.SSH" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -61,7 +44,7 @@
     </option>
   </component>
   <component name="SvnConfiguration">
-    <configuration>C:\Users\mederic\AppData\Roaming\Subversion</configuration>
+    <configuration>C:\Users\TheWitcher\AppData\Roaming\Subversion</configuration>
     <option name="sshConnectionType" value="PRIVATE_KEY" />
     <option name="sshUserName" value="ylouazel" />
     <option name="sshPrivateKeyPath" value="C:\Users\TheWitcher\Documents\id_rsa" />
@@ -74,8 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570023652512</updated>
       <workItem from="1570023654224" duration="14333000" />
-      <workItem from="1570200958176" duration="4683000" />
-      <workItem from="1570626216254" duration="2683000" />
+      <workItem from="1570624457603" duration="1443000" />
     </task>
     <task id="LOCAL-00001" summary="testconnection">
       <created>1570025026388</created>
@@ -112,14 +94,7 @@
       <option name="project" value="LOCAL" />
       <updated>1570174014723</updated>
     </task>
-    <task id="LOCAL-00006" summary="mise à jour bsd en ligne chez infomaniak">
-      <created>1570626376737</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1570626376737</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +119,6 @@
     <MESSAGE value="sql dsn" />
     <MESSAGE value="bsd intégré" />
     <MESSAGE value="ajout signup et adduser" />
-    <MESSAGE value="mise à jour bsd en ligne chez infomaniak" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise à jour bsd en ligne chez infomaniak" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout signup et adduser" />
   </component>
 </project>
