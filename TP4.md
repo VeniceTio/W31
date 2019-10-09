@@ -112,7 +112,7 @@ Exercice 6 : Passage en POO - Changement de mot de passe
 Exercice 7 : Passage en POO - Suppression d'un utilisateur
 ----------------------------------------------------------
 
-1. Dans la classe `User`, écrivez une méthode publique `delete`, avec un mot de passe en paramètre, qui effectue les étapes du fichier `deleteuser.php` relatives à la BDD, c'est-à-dire :
+1. Dans la classe `User`, écrivez une méthode publique `delete` qui effectue les étapes du fichier `deleteuser.php` relatives à la BDD, c'est-à-dire :
     - faire une requête vers la BDD pour supprimer l'utilisateur `$this`
     - déclenche une exception PHP si la requête échoue
 2. Modifiez le fichier `deleteuser.php` en remplaçant tout ce qui concerne les requêtes vers la BDD par :
