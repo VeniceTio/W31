@@ -19,5 +19,14 @@ else{
     $result->bindValue(':login',$login,PDO::PARAM_STR);
     $result->bindValue(':password',sha1($pass),PDO::PARAM_STR);
     $result->execute();
-    var_dump($result);
+    if($result->rowCount()!=0) {
+        $_SESSION['message'] = "The password has been changed";
+        header('Location: http://tp4.local/welcome.php');
+        exit();
+    }
+    else{
+        $_SESSION['message'] = "Error try again";
+        header('Location: http://tp4.local/formpassword.php');
+        exit();
+    }
 }

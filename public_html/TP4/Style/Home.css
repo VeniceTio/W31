@@ -18,6 +18,10 @@
     from { opacity: 0;}
     to { opacity:1;}
 }
+@keyframes fadeOut {
+    from { opacity: 1;}
+    to { opacity:0;}
+}
 /*basic reset*/
 * {margin: 0; padding: 0;}
 
@@ -74,13 +78,18 @@ body {
     font-weight: normal;
     color: white;
     border: 0 none;
-    border-radius: 1px;
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px;
 }
 #msform .action-button:hover, #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #4CAF50;
+}
+
+#action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /*headings*/
@@ -126,4 +135,21 @@ h4 {
     background: none;
 }
 
+.annonce {
+    background: #4CAF50;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 5% 10% 0;
+    opacity: 0;
+    animation: fadeOut 5s ease-in;
+}
+
+.annonce h5 {
+    color: white;
+    font-weight: lighter;
+}
 

@@ -23,11 +23,15 @@ if (!isset($_SESSION['login'])){
             <?php
             echo '<h3 class="fs-subtitle">'.$_SESSION['login'].'</h3>'
             ?>
-            <a class="ac" href="http://tp4.local/formpassword.php">Change Password</a>
-            <a class="ac" href="http://tp4.local/deleteuser.php">Delete User</a>
-            <a name="logout" class="submit action-button" value="logout" href="signout.php">log-out</a>
+            <section id="action">
+                <a name="logout" class="ac" value="ModifPass" href="formpassword.php">Change Password</a>
+                <a name="logout" class="ac" value="delete" href="deleteuser.php">Delete User</a>
+                <a name="logout" class="submit action-button" value="logout" href="signout.php">log-out</a>
+            </section>
         </fieldset>
+        <?php if (isset($_SESSION['message'])) {include("annonce.php");unset($_SESSION['message']);}?>
     </form>
+
 </body>
 
 </html>

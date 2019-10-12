@@ -27,7 +27,10 @@ if (!isset($_SESSION['login'])){
             }?>
         </h4>
         <input type="submit" name="submit" class="submit action-button" value="Valid"/>
+        <h5 class="message">Have you changed your mind
+            ?<a class="ac" href="welcome.php">Return</a></h5>
     </fieldset>
+    <?php if (isset($_SESSION['message'])) {include("annonce.php");unset($_SESSION['message']);}?>
 </form>
 <script type="text/javascript" language="JavaScript">
     function checkPassword(input){
