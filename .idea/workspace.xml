@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/adduser.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/adduser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/TP3/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/TP3/users.php" beforeDir="false" />
-    </list>
+    <list default="true" id="1d98aec6-67a1-4cc2-b1ff-bc0bcb5c49e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570023652512</updated>
       <workItem from="1570023654224" duration="14333000" />
-      <workItem from="1570200958176" duration="4683000" />
+      <workItem from="1570200958176" duration="4810000" />
     </task>
     <task id="LOCAL-00001" summary="testconnection">
       <created>1570025026388</created>
@@ -100,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570174014723</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fin TP3 avec css">
+      <created>1570207966794</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570207966795</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +126,7 @@
     <MESSAGE value="sql dsn" />
     <MESSAGE value="bsd intégré" />
     <MESSAGE value="ajout signup et adduser" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout signup et adduser" />
+    <MESSAGE value="fin TP3 avec css" />
+    <option name="LAST_COMMIT_MESSAGE" value="fin TP3 avec css" />
   </component>
 </project>
