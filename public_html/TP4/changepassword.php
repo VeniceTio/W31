@@ -4,7 +4,7 @@ if (!isset($_SESSION['login']) && $_SERVER['REQUEST_METHOD'] != 'POST'){
     header('Location: http://tp4.local/signin.php');
 }
 else{
-    include("bdd.php");
+    include("models/bdd.php");
 
     try {
         $pdo = new PDO(SQL_DNS,SQL_USERNAME,SQL_PASSWORD);

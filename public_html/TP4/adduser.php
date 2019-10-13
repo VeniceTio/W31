@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST' || empty(htmlspecialchars($_POST['login'
     exit();
 }
 else {
-    include("bdd.php");
+    include("models/bdd.php");
 
     try {
         $pdo = new PDO(SQL_DNS, SQL_USERNAME, SQL_PASSWORD);
@@ -27,7 +27,7 @@ else {
             $result->bindValue(':login', $login, PDO::PARAM_STR);
             $result->bindValue(':password', sha1($pass), PDO::PARAM_STR);
             $succes = $result->execute();
-            if (succes){
+            if ($succes){
                 header('Location: http://tp4.local/signin.php');
                 exit();
             }
