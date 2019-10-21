@@ -4,6 +4,28 @@ if (!isset($_SESSION['login']) && $_SERVER['REQUEST_METHOD'] != 'POST'){
     header('Location: http://tp4.local/signin.php');
 }
 else{
+    include("models/User.php");
+    $login = htmlspecialchars($_SESSION['login']);
+    $user = new User($login,htmlspecialchars($_POST['pass']));
+
+    try {
+        $result = $user->changePassword(sha1(htmlspecialchars($_POST['rpass'])));
+    }
+    catch (Exception $e){
+        header('Location: fail.php');
+        exit();
+    }
+    if ($result){
+        $_SESSION['message'] = "The password has been changed";
+        header('Location: http://tp4.local/welcome.php');
+        exit();
+    }
+    else {
+        $_SESSION['message'] = "Error try again";
+        header('Location: http://tp4.local/formpassword.php');
+        exit();
+    }
+    /**
     include("models/bdd.php");
 
     try {
@@ -28,5 +50,5 @@ else{
         $_SESSION['message'] = "Error try again";
         header('Location: http://tp4.local/formpassword.php');
         exit();
-    }
+    }**/
 }

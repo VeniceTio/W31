@@ -5,37 +5,25 @@ if (!isset($_SESSION['login'])){
     exit();
 }
 else {
-    include("models/bdd.php");
-
-    try {
-        $pdo = new PDO(SQL_DNS, SQL_USERNAME, SQL_PASSWORD);
-    } catch (PDOException $e) {
-        header('Location: fail.php');
-        exit();
-    }
+    include("models/User.php");
     $login = htmlspecialchars($_SESSION['login']);
-    $result = $pdo->prepare("SELECT * FROM users WHERE login = :login");
-    $result->bindValue(':login', $login, PDO::PARAM_STR);
-    $result->execute();
+    $user = new User($login,"voila");
+    try {
+        $del = $user->deleteUser();
+        /**if ($del){
+            session_destroy();
+            header('Location: http://tp4.local/signin.php');
+            exit();
+        }
+        /**else {
+            $_SESSION['message']="Error can't delete this acount";
+            header('Location: http://tp4.local/welcome.php');
+            exit();
+        }**/
+        var_dump($del);
+    }
+    catch (Exception $e){
+        var_dump($e);
+    }
 
-    if ($result->rowCount()==1) {
-            $result = $pdo->prepare("DELETE FROM users WHERE login = :login");
-            $result->bindValue(':login', $login, PDO::PARAM_STR);
-            $succes = $result->execute();
-            if ($succes){
-                session_destroy();
-                header('Location: http://tp4.local/signin.php');
-                exit();
-            }
-            else {
-                $_SESSION['message']="Error can't delete this acount";
-                header('Location: http://tp4.local/welcome.php');
-                exit();
-            }
-    }
-    else{
-        $_SESSION['message']="Error can't delete this acount";
-        header('Location: http://tp4.local/welcome.php');
-        exit();
-    }
 }

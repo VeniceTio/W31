@@ -6,8 +6,27 @@ if($_SERVER['REQUEST_METHOD'] != 'POST' || empty(htmlspecialchars($_POST['login'
     exit();
 }
 else {
-    include("models/bdd.php");
+    include("models/User.php");
+    $login = htmlspecialchars($_POST['login']);
+    $user = new User($login,htmlspecialchars($_POST['pass']));
 
+    try {
+        $result = $user->create();
+    }
+    catch (Exception $e){
+        header('Location: fail.php');
+        exit();
+    }
+    if ($result){
+        header('Location: http://tp4.local/signin.php');
+        exit();
+    }
+    else {
+        $_SESSION['messageInscription']="Request Error";
+        header('Location: http://tp4.local/signup.php');
+        exit();
+    }
+    /**
     try {
         $pdo = new PDO(SQL_DNS, SQL_USERNAME, SQL_PASSWORD);
     } catch (PDOException $e) {
@@ -22,7 +41,6 @@ else {
     $result->execute();
 
     if ($result->rowCount()==0) {
-        if($pass == $rpass) {
             $result = $pdo->prepare("INSERT INTO users (login,password) VALUES (:login,:password)");
             $result->bindValue(':login', $login, PDO::PARAM_STR);
             $result->bindValue(':password', sha1($pass), PDO::PARAM_STR);
@@ -36,17 +54,11 @@ else {
                 header('Location: http://tp4.local/signup.php');
                 exit();
             }
-        }
-        else {
-            $_SESSION['messageInscription']="Wrong password";
-            if (isset($login)){$_SESSION['loginUp']=$login;}
-            header('Location: http://tp4.local/signup.php');
-            exit();
-        }
+
     }
     else{
         $_SESSION['messageInscription']="login is used";
         header('Location: http://tp4.local/signup.php');
         exit();
-    }
+    }**/
 }
