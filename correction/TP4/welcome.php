@@ -18,7 +18,7 @@
 			Welcome on your account.
 		</p>
 		<ul>
-			<li><a href="changepassword.php">Change password.</a></li>
+			<li><a href="formpassword.php">Change password.</a></li>
 			<li><a href="deleteuser.php">Delete my account.</a></li>
 		</ul>
         <p><a href="signout.php">Sign out.</a></p>
