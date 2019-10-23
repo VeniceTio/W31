@@ -43,12 +43,12 @@ else{
     $result->execute();
     if($result->rowCount()!=0) {
         $_SESSION['message'] = "The password has been changed";
-        header('Location: http://tp5.local/welcome.php');
+        header('Location: http://tp4.local/welcome.php');
         exit();
     }
     else{
         $_SESSION['message'] = "Error try again";
-        header('Location: http://tp5.local/formpassword.php');
+        header('Location: http://tp4.local/formpassword.php');
         exit();
     }**/
 }

@@ -1,8 +1,8 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] != 'POST'){
+/**if($_SERVER['REQUEST_METHOD'] != 'POST'){
     header('Location: http://tp5.local/signin.php');
-}
-else{
+}**/
+//else{
     session_start();
     include("models/User.php");
     $login = htmlspecialchars($_POST['login']);
@@ -24,4 +24,4 @@ else{
         $_SESSION['message']='Wrong try again';
         header('Location: http://tp5.local/signin.php');
     }
-}
+//}

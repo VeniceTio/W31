@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
+    return view('signin');
+});
+Route::post('authenticate.php', function () {
+    return view('authenticate');
+});
+Route::get('welcome.php', function () {
     return view('welcome');
 });
+
+Route::get('signup.php', function () {
+    return view('signup');
+});
+
