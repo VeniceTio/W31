@@ -13,6 +13,7 @@ Ensuite, pour **utiliser** de votre dépôt, regardez la page [HOWTO.md](HOWTO.m
 
 - [CM n°1 : Introduction à PHP](http://adrien.krahenbuhl.fr/courses/IUTRS/W31/CM1)
 - [CM n°2 : POO et PDO](http://adrien.krahenbuhl.fr/courses/IUTRS/W31/CM2)
+- [CM n°3 : Laravel](http://adrien.krahenbuhl.fr/courses/IUTRS/W31/CM3)
 
 1 - Créer un **clône distant** sur Gitlab
 -----------------------------------------
