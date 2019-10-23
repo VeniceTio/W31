@@ -60,7 +60,7 @@ Exercice 3 : Controleur et PDO
     - remplacer tous les `MyPDO::pdo()` par `DB::connection()->getPdo()`
     - ajouter en entête les deux `use` suivants :
         ```php
-        use use Illuminate\Support\Facades\DB;
+        use Illuminate\Support\Facades\DB;
         use PDO;
         ```
 
