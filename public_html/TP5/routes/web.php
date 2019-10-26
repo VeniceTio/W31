@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('signin');
 });
+Route::get('signin.php', function () {
+    return view('signin');
+});
 Route::post('authenticate.php', function () {
     return view('authenticate');
 });
