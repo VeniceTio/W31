@@ -1,48 +1,31 @@
 <?php
-session_start();
-if (!isset($_SESSION['login'])){
-    header('Location: http://tp5.local/signin.php');
-}
+    session_start();
+    if ( !isset($_SESSION['user']) )
+    {
+        header('Location: signin.php');
+        exit();
+    }
 ?>
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="Style/Home.css">
-    <title>TP3</title>
-</head>
-<body>
-<!-- multistep form -->
-<form id="msform" action="http://tp5.local/changepassword.php" method="post">
-    <!-- fieldsets -->
-    <fieldset>
-        <h2 class="fs-title">Change your password</h2>
-        <input type="password" id="pass" name="pass" placeholder="Password" required/>
-        <input type="password" id="rpass" oninput="checkPassword(this)" name="rpass" placeholder="Repeat password" required/>
-        <h4>
-            <?php
-            if (isset($_SESSION['messageInscription']) && !empty($_SESSION['messageInscription'])) {
-                echo $_SESSION['messageInscription'];
-                unset($_SESSION['messageInscription']);
-            }?>
-        </h4>
-        <input type="submit" name="submit" class="submit action-button" value="Valid"/>
-        <h5 class="message">Have you changed your mind
-            ?<a class="ac" href="welcome.php">Return</a></h5>
-    </fieldset>
-    <?php if (isset($_SESSION['message'])) {include("annonce.php");unset($_SESSION['message']);}?>
-</form>
-<script type="text/javascript" language="JavaScript">
-    function checkPassword(input){
-        const element = document.getElementById("pass").value;
-        if (element !== input.value){
-            input.setCustomValidity("Wrong Password");
-        }
-        else{
-            input.setCustomValidity("");
-        }
-    }
-</script>
-</body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Change password</title>
+	</head>
+	<body>
+		<h1>Change password</h1>
+		<form action="changepassword.php" method="post">
+			<label for="newpassword">New password</label>         <input type="password" id="newpassword"     name="newpassword"     required>
+			<label for="confirmpassword">Confirm password</label> <input type="password" id="confirmpassword" name="confirmpassword" required>
+			<input type="submit" value="Change my password">
+		</form>
+		<p>
+			Go back to <a href="welcome.php">Home</a>.
+		</p>
+        <?php if ( isset($_SESSION['message']) && !empty($_SESSION['message']) ) { ?>
+        		<section>
+        			<p><?= $_SESSION['message']; ?></p>
+        		</section>
+        <?php } ?>
+	</body>
 </html>
-

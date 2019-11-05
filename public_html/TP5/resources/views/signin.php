@@ -1,25 +1,26 @@
 <?php
-session_start();
+	session_start();
 ?>
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="Style/Home.css">
-    <title>TP3</title>
-</head>
-<body>
-    <!-- multistep form -->
-    <form id="msform" action="http://tp5.local/authenticate.php" method="post">
-        <!-- fieldsets -->
-        <fieldset>
-            <h2 class="fs-title">authentification</h2>
-            <input type="text" name="login" placeholder="login"/>
-            <input type="password" name="pass" placeholder="Password"/>
-            <h4><?php if (isset($_SESSION['message'])) {echo $_SESSION['message'];unset($_SESSION['message']);}?></h4>
-            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
-            <h5 class="message">Not registered ?<a class="ac" href="http://tp5.local/signup.php">Create an account</a></h5>
-        </fieldset>
-    </form>
-</body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Signin</title>
+	</head>
+	<body>
+		<h1>Signin</h1>
+		<form action="authenticate.php" method="post">
+			<label for="login">Login</label>       <input type="text"     id="login"    name="login"    required autofocus>
+			<label for="password">Password</label> <input type="password" id="password" name="password" required>
+			<input type="submit" value="Signin">
+		</form>
+		<p>
+			If you don't have an account, <a href="signup.php">signup</a> first.
+		</p>
+<?php if ( isset($_SESSION['message']) && !empty($_SESSION['message']) ) { ?>
+		<section>
+			<p><?= $_SESSION['message']; ?></p>
+		</section>
+<?php } ?>
+	</body>
 </html>

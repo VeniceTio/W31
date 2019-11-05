@@ -1,54 +1,80 @@
 <?php
+/******************************************************************************
+ * On démarre la session
+ */
 session_start();
-if (!isset($_SESSION['login']) && $_SERVER['REQUEST_METHOD'] != 'POST'){
-    header('Location: http://tp5.local/signin.php');
-}
-else{
-    include("models/User.php");
-    $login = htmlspecialchars($_SESSION['login']);
-    $user = new User($login,htmlspecialchars($_POST['pass']));
 
-    try {
-        $result = $user->changePassword(sha1(htmlspecialchars($_POST['rpass'])));
-    }
-    catch (Exception $e){
-        header('Location: fail.php');
-        exit();
-    }
-    if ($result){
-        $_SESSION['message'] = "The password has been changed";
-        header('Location: http://tp5.local/welcome.php');
-        exit();
-    }
-    else {
-        $_SESSION['message'] = "Error try again";
-        header('Location: http://tp5.local/formpassword.php');
-        exit();
-    }
-    /**
-    include("models/bdd.php");
+// On reset les messages
+unset($_SESSION['message']);
 
-    try {
-        $pdo = new PDO(SQL_DNS,SQL_USERNAME,SQL_PASSWORD);
-    }
-    catch(PDOException $e){
-        header('Location: fail.php');
-        exit();
-    }
-    $login = htmlspecialchars($_SESSION['login']);
-    $pass = htmlspecialchars($_POST['pass']);
-    $result = $pdo->prepare("UPDATE users set password = :password WHERE login = :login");
-    $result->bindValue(':login',$login,PDO::PARAM_STR);
-    $result->bindValue(':password',sha1($pass),PDO::PARAM_STR);
-    $result->execute();
-    if($result->rowCount()!=0) {
-        $_SESSION['message'] = "The password has been changed";
-        header('Location: http://tp4.local/welcome.php');
-        exit();
-    }
-    else{
-        $_SESSION['message'] = "Error try again";
-        header('Location: http://tp4.local/formpassword.php');
-        exit();
-    }**/
+/******************************************************************************
+ * On vérifie que l'utilisateur est connecté
+ */
+if ( !isset($_SESSION['user']) )
+{
+    header('Location: signin.php');
+    exit();
 }
+
+/******************************************************************************
+ * On vérifie que la méthode HTTP utilisée est bien POST
+ */
+if ($_SERVER['REQUEST_METHOD'] != 'POST')
+{
+    header('Location: formpassword.php');
+    exit();
+}
+
+// On vérifie qu'on a bien reçu les données en POST
+if ( !isset($_POST['newpassword'],$_POST['confirmpassword']) )
+{
+    $_SESSION['message'] = "Some POST data are missing.";
+    header('Location: formpassword.php');
+    exit();
+}
+
+// On les sécurise les données POST.
+$login           = $_SESSION['user'];
+$newpassword     = htmlspecialchars($_POST['newpassword']);
+$confirmpassword = htmlspecialchars($_POST['confirmpassword']);
+
+// On s'assure que les 2 mts de passes corrspondent
+if ( $newpassword != $confirmpassword )
+{
+    $_SESSION['message'] = "Error: passwords are different.";
+    header('Location: formpassword.php');
+    exit();
+}
+
+/******************************************************************************
+ * On inclut le fichier contenant les informations de connexion à la BDD
+ */
+ require_once('models/User.php');
+
+ //On crée l'utilisateur
+ $user = new User($login);
+
+try {
+    $user->changePassword($newpassword);
+}
+catch (PDOException $e) {
+    // Si erreur lors de la création de l'objet PDO
+    // (déclenchée par MyPDO::pdo())
+    $_SESSION['message'] = $e->getMessage();
+    header('Location: formpassword.php');
+    exit();
+}
+catch (Exception $e) {
+    // Si erreur durant l'exécution de la requête
+    // (déclenchée par le throw de $user->changePassword())
+    $_SESSION['message'] = $e->getMessage();
+    header('Location: formpassword.php');
+    exit();
+}
+
+/******************************************************************************
+ * Si tout est ok, on retourne sur welcome.php
+ */
+$_SESSION['message'] = "Password successfully updated.";
+header('Location: welcome.php');
+exit();

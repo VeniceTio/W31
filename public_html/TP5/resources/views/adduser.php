@@ -1,64 +1,71 @@
 <?php
+/******************************************************************************
+ * On démarre la session
+ */
 session_start();
-if($_SERVER['REQUEST_METHOD'] != 'POST' || empty(htmlspecialchars($_POST['login'])) || empty(htmlspecialchars($_POST['pass'])) || empty(htmlspecialchars($_POST['rpass'])) ){
-    $_SESSION['messageInscription']="Fill all the fields";
-    header('Location: http://tp5.local/signup.php');
+
+// On reset les messages
+unset($_SESSION['message']);
+
+/******************************************************************************
+ * On vérifie que la méthode HTTP utilisée est bien POST
+ */
+if ($_SERVER['REQUEST_METHOD'] != 'POST')
+{
+    header('Location: signup.php');
     exit();
 }
-else {
-    include("models/User.php");
-    $login = htmlspecialchars($_POST['login']);
-    $user = new User($login,htmlspecialchars($_POST['pass']));
 
-    try {
-        $result = $user->create();
-    }
-    catch (Exception $e){
-        header('Location: fail.php');
-        exit();
-    }
-    if ($result){
-        header('Location: http://tp5.local/signin.php');
-        exit();
-    }
-    else {
-        $_SESSION['messageInscription']="Request Error";
-        header('Location: http://tp5.local/signup.php');
-        exit();
-    }
-    /**
-    try {
-        $pdo = new PDO(SQL_DNS, SQL_USERNAME, SQL_PASSWORD);
-    } catch (PDOException $e) {
-        header('Location: fail.php');
-        exit();
-    }
-    $login = htmlspecialchars($_POST['login']);
-    $pass = htmlspecialchars($_POST['pass']);
-    $rpass = htmlspecialchars($_POST['rpass']);
-    $result = $pdo->prepare("SELECT * FROM users WHERE login = :login");
-    $result->bindValue(':login', $login, PDO::PARAM_STR);
-    $result->execute();
-
-    if ($result->rowCount()==0) {
-            $result = $pdo->prepare("INSERT INTO users (login,password) VALUES (:login,:password)");
-            $result->bindValue(':login', $login, PDO::PARAM_STR);
-            $result->bindValue(':password', sha1($pass), PDO::PARAM_STR);
-            $succes = $result->execute();
-            if ($succes){
-                header('Location: http://tp4.local/signin.php');
-                exit();
-            }
-            else {
-                $_SESSION['messageInscription']="Request Error";
-                header('Location: http://tp4.local/signup.php');
-                exit();
-            }
-
-    }
-    else{
-        $_SESSION['messageInscription']="login is used";
-        header('Location: http://tp4.local/signup.php');
-        exit();
-    }**/
+// On vérifie qu'on a bien reçu les données en POST
+if ( !isset($_POST['login'],$_POST['password'],$_POST['confirm']) )
+{
+    $_SESSION['message'] = "Some POST data are missing.";
+    header('Location: signup.php');
+    exit();
 }
+
+// On les sécurise les données POST.
+$login = htmlspecialchars($_POST['login']);
+$password = htmlspecialchars($_POST['password']);
+$confirm = htmlspecialchars($_POST['confirm']);
+
+if ( $password !== $confirm )
+{
+    $_SESSION['message'] = "The two passwords differ.";
+    header('Location: signup.php');
+    exit();
+}
+
+/******************************************************************************
+ * On inclut le fichier contenant la définition de la classe User
+ */
+require_once('models/User.php');
+
+//On crée l'utilisateur
+$user = new User($login,$password);
+
+try {
+    // On crée l'utilisateur dans la BDD
+    $user->create();
+}
+catch (PDOException $e) {
+    // Si erreur lors de la création de l'objet PDO
+    // (déclenchée par MyPDO::pdo())
+    $_SESSION['message'] = $e->getMessage();
+    header('Location: signup.php');
+    exit();
+}
+catch (Exception $e) {
+    // Si erreur durant l'exécution de la requête
+    // (déclenchée par le throw de $user->create())
+    $_SESSION['message'] = $e->getMessage();
+    header('Location: signup.php');
+    exit();
+}
+
+/******************************************************************************
+ * Si tout est ok, on indique que le compte est crée et on se rend sur signin.php
+ */
+$_SESSION['message'] = "Account created! Now, signin.";
+header('Location: signin.php');
+exit();

@@ -1,43 +1,27 @@
 <?php
-session_start()
+	session_start();
 ?>
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="Style/Home.css">
-    <title>TP3</title>
-</head>
-<body>
-    <!-- multistep form -->
-    <form id="msform" action="http://tp5.local/adduser.php" method="post">
-        <!-- fieldsets -->
-        <fieldset>
-            <h2 class="fs-title">Sign up</h2>
-            <input type="text" name="login" placeholder="Login" value="<?php if (isset($_SESSION['loginUp'])) {echo $_SESSION['loginUp'];unset($_SESSION['loginUp']);}?>" required/>
-            <input type="password" id="pass" name="pass" placeholder="Password" required/>
-            <input type="password" id="rpass" oninput="checkPassword(this)" name="rpass" placeholder="Repeat password" required/>
-            <h4>
-                <?php
-                if (isset($_SESSION['messageInscription']) && !empty($_SESSION['messageInscription'])) {
-                    echo $_SESSION['messageInscription'];
-                    unset($_SESSION['messageInscription']);
-                }?>
-            </h4>
-            <input type="submit" name="submit" class="submit action-button" value="Sign up"/>
-            <h5 class="message">Already registered ?<a class="ac" href="http://tp5.local/signin.php">Sign in</a></h5>
-        </fieldset>
-    </form>
-<script type="text/javascript" language="JavaScript">
-    function checkPassword(input){
-        const element = document.getElementById("pass").value;
-        if (element !== input.value){
-            input.setCustomValidity("Wrong Password");
-        }
-        else{
-            input.setCustomValidity("");
-        }
-    }
-</script>
-</body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Signup</title>
+	</head>
+	<body>
+		<h1>Signup</h1>
+		<form action="adduser.php" method="post">
+			<label for="login">Login</label>              <input type="text"     id="login"    name="login"    required autofocus>
+			<label for="password">Password</label>        <input type="password" id="password" name="password" required>
+			<label for="confirm">Confirm password</label> <input type="password" id="confirm"  name="confirm"  required>
+			<input type="submit" value="Signup">
+		</form>
+		<p>
+			If you already have an account, <a href="signin.php">signin</a>.
+		</p>
+<?php if ( isset($_SESSION['message']) && !empty($_SESSION['message']) ) { ?>
+		<section>
+			<p><?= $_SESSION['message']; ?></p>
+		</section>
+<?php } ?>
+	</body>
 </html>

@@ -1,29 +1,56 @@
 <?php
+/******************************************************************************
+ * On démarre la session
+ */
 session_start();
-if (!isset($_SESSION['login'])){
-    header('Location: http://tp5.local/signin.php');
+
+// On reset les messages
+unset($_SESSION['message']);
+
+/******************************************************************************
+ * On vérifie que l'utilisateur est connecté
+ */
+if ( !isset($_SESSION['user']) )
+{
+    header('Location: signin.php');
     exit();
 }
-else {
-    include("models/User.php");
-    $login = htmlspecialchars($_SESSION['login']);
-    $user = new User($login,"voila");
-    try {
-        $del = $user->deleteUser();
-        /**if ($del){
-            session_destroy();
-            header('Location: http://tp4.local/signin.php');
-            exit();
-        }
-        /**else {
-            $_SESSION['message']="Error can't delete this acount";
-            header('Location: http://tp4.local/welcome.php');
-            exit();
-        }**/
-        var_dump($del);
-    }
-    catch (Exception $e){
-        var_dump($e);
-    }
 
+$login = $_SESSION['user'];
+
+/******************************************************************************
+ * On inclut le fichier contenant la définition de la classe User
+ */
+require_once('models/User.php');
+
+//On crée l'utilisateur
+$user = new User($login);
+
+// Création de l'objet PDO
+try {
+    // On crée l'utilisateur dans la BDD
+    $user->delete();
 }
+catch (PDOException $e) {
+    // Si erreur lors de la création de l'objet PDO
+    // (déclenchée par MyPDO::pdo())
+    $_SESSION['message'] = $e->getMessage();
+    header('Location: welcome.php');
+    exit();
+}
+catch (Exception $e) {
+    // Si erreur durant l'exécution de la requête
+    // (déclenchée par le throw de $user->create())
+    $_SESSION['message'] = $e->getMessage();
+    header('Location: welcome.php');
+    exit();
+}
+
+/******************************************************************************
+ * Si tout est ok, on détruit la session et retourne sur signin.php
+ */
+session_destroy();
+session_start();
+$_SESSION['message'] = "Account successfully deleted.";
+header('Location: signin.php');
+exit();
