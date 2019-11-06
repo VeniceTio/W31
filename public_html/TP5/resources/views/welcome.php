@@ -1,11 +1,3 @@
-<?php
-	session_start();
-	if ( !isset($_SESSION['user']) )
-	{
-        header('Location: signin.php');
-        exit();
-	}
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,10 +10,10 @@
 			Welcome on your account.
 		</p>
 		<ul>
-			<li><a href="formpassword.php">Change password.</a></li>
-			<li><a href="deleteuser.php">Delete my account.</a></li>
+			<li><a href="formpassword">Change password.</a></li>
+			<li><a href="deleteuser">Delete my account.</a></li>
 		</ul>
-        <p><a href="signout.php">Sign out.</a></p>
+        <p><a href="signout">Sign out.</a></p>
     </body>
 	<?php if ( isset($_SESSION['message']) && !empty($_SESSION['message']) ) { ?>
 			<section>
