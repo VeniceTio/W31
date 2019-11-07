@@ -36,9 +36,13 @@ Route::group([],function() {
     });
 
 
-    Route::prefix("admin")->groupe(function() {
+    Route::prefix('admin')->group(function() {
+
         Route::get('signout', function () {
             session_destroy();
+            return redirect('signin');
+        });
+        Route::get('signin', function () {
             return redirect('signin');
         });
 
