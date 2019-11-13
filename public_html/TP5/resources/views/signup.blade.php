@@ -1,13 +1,11 @@
+@extends('layout/app')
+@section('titre','Signup')
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Signup</title>
-	</head>
-	<body>
-		<h1>Signup</h1>
+
+@section('content')
+    @parent
 		<form action="adduser" method="post">
+            @csrf
 			<label for="login">Login</label>              <input type="text"     id="login"    name="login"    required autofocus>
 			<label for="password">Password</label>        <input type="password" id="password" name="password" required>
 			<label for="confirm">Confirm password</label> <input type="password" id="confirm"  name="confirm"  required>
@@ -16,10 +14,4 @@
 		<p>
 			If you already have an account, <a href="signin">signin</a>.
 		</p>
-<?php if ( isset($_SESSION['message']) && !empty($_SESSION['message']) ) { ?>
-		<section>
-			<p><?= $_SESSION['message']; ?></p>
-		</section>
-<?php unset($_SESSION['message']);} ?>
-	</body>
-</html>
+@endsection
