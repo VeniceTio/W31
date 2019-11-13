@@ -1,3 +1,3 @@
 @isset($message)
-    {{ $message }}.
+    {{ $message }}
 @endisset
