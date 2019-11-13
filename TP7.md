@@ -84,3 +84,5 @@ Le choix vous est laissé d'utiliser les sessions à travers l'objet `$request->
     - à utiliser `put` pour sauvegarder le nom de l'utilisateur
 
 1. Faite de même pour le middleware `EnsureMyUserIsAuthenticated.php`.
+
+1. Finalement, supprimer l'appel à `session_start()` du fichier `routes/web.php`.
