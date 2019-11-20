@@ -50,7 +50,7 @@ Exercice 3 : Le contrôle dans ses plus simples éléments
     ```
 et copiez-y le code de la fonction associée à la route `signin` de `routes/web.php`.
 
-1. Modifier les routes `/` et `signin` de `routes/web.php` our qu'elles appellent la méthode `signin` du contrôleur `UserController`.
+1. Modifier les routes `/` et `signin` de `routes/web.php` pour qu'elles appellent la méthode `signin` du contrôleur `UserController`.
 
 1. Appliquer les deux étapes précédentes aux routes `signup`, `formpassword`, `signout` et `welcome`.
 
