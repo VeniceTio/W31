@@ -36,9 +36,9 @@ Pour cet exercice, référeez-vous aux documentation sur [la migration](https://
 Exercice 2 : De User à UserEloquent
 -----------------------------------
 
-Cet exercice a pour objectif de remplacer, dans `UserController.php`, l'utilisation de du modèle `User` par `UserController`.
+Cet exercice a pour objectif de remplacer, dans `UserController.php`, l'utilisation du modèle `MyUser` par `UserEloquent`.
 
-Pendant les tests, il est possible d'indiquer dans `UserEloquent.php` d'utiliser temporairement la table `Users` afin d'avoir déjà des utilisateurs inscrits.
+> Note : Pendant les tests, il est possible d'indiquer dans `UserEloquent.php` d'utiliser temporairement la table `Users` afin d'avoir déjà des utilisateurs inscrits.
 
 1. Commencer par effectuer le remplacement dans la méthode `authenticate`. Il est nécessaire de réintroduire la méthode `password_verify`.
 
