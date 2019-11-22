@@ -85,4 +85,4 @@ Le choix vous est laissé d'utiliser les sessions à travers l'objet `$request->
 
 1. Faite de même pour le middleware `EnsureMyUserIsAuthenticated.php`.
 
-1. Finalement, supprimer l'appel à `session_start()` du fichier `routes/web.php`.
+1. Finalement, supprimer l'appel à `session_start()` du fichier `routes/web.php` et supprimer le groupe global.
