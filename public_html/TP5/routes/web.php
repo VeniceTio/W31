@@ -12,10 +12,11 @@
 */
 
 Route::group([],function() {
-    Route::get('/', 'UserController@signin');
-    Route::get('index', 'UserController@signin');
+    Route::get('/', 'ArticleController@home');
+    Route::get('index', 'ArticleController@home');
     Route::get('signin', 'UserController@signin');
     Route::get('signup', 'UserController@signup');
+    Route::get('home', 'ArticleController@home');
 
 
 

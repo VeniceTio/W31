@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\UserEloquent;
 use Illuminate\Http\Request;
-use App\MyUser;
 
 class UserController extends Controller
 {
@@ -61,49 +61,24 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function authenticate( Request $request ){
-        // On reset les messages
-        $request->session()->forget('message');
-
-
         // On vérifie qu'on a bien reçu les données en POST
-        if ( !($request->has('login') && $request->has('password')) )
-        {
-            $request->session()->put('message', "Some POST data are missing.");
-            return redirect('signin');
-        }
+        if ( !$request->has(['login','password']) )
+            return redirect('signin')->with('message','Some POST data are missing.');
 
-        // On les sécurise les données POST.
-        $login = htmlspecialchars($request->get('login'));
-        $password = htmlspecialchars($request->get('password'));
-
-        //On crée l'utilisateur
-        $user = new MyUser($login,$password);
-
+        // On récupère l'utilisateur en BDD
         try {
-            // On vérifie qu'il existe dans la BDD
-            if ( !$user->exists() )
-            {
-                $request->session()->put('message', 'Wrong login/password.');
-                return redirect('signin');
-            }
+            $user = UserEloquent::where('user',$request->input('login'))->firstOrFail();
         }
-        catch (\PDOException $e) {
-            // Si erreur lors de la création de l'objet PDO
-            // (déclenchée par MyPDO::pdo())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('signin');
-        }
-        catch (\Exception $e) {
-            // Si erreur durant l'exécution de la requête
-            // (déclenchée par le throw de $user->exists())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('signin');
+        catch ( \Illuminate\Database\Eloquent\ModelNotFoundException $e ) {
+            return redirect('signin')->with('message','Wrong login.');
         }
 
-        /******************************************************************************
-         * Si tout est ok, on se connecte et se rend sur welcome.php
-         */
-        $request->session()->put('user', $login);
+        // On vérifie que les mots de passe correspondent
+        if ( !password_verify($request->input('password'), $user->password) )
+            return redirect('signin')->with('message','Wrong password.');
+
+        // Si tout est ok, on se connecte et se rend sur welcome
+        $request->session()->put('user',$user->user);
         return redirect('admin/welcome');
     }
 
@@ -114,52 +89,28 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function adduser( Request $request ){
-        // On reset les messages
-        $request->session()->forget('message');
-
         // On vérifie qu'on a bien reçu les données en POST
-        if ( !($request->has('login') && $request->has('password') && $request->has('confirm') ))
-        {
-            $request->session()->put('message', "Some POST data are missing.");
-            return redirect('signup');
-        }
+        if ( !$request->has(['login','password','confirm']) )
+            return redirect('signup')->with('message',"Some POST data are missing.");
 
-        // On les sécurise les données POST.
-        $login = htmlspecialchars($request->get('login'));
-        $password = htmlspecialchars($request->get('password'));
-        $confirm = htmlspecialchars($request->get('confirm'));
-
-        if ( $password !== $confirm )
-        {
-            $request->session()->put('message', "The two passwords differ.");
-            return redirect('signup');
-        }
+        if ( $request->input('password') !== $request->input('confirm') )
+            return redirect('signup')->with('message',"The two passwords differ.");
 
         //On crée l'utilisateur
-        $user = new MyUser($login,$password);
+        $user = new UserEloquent();
+        $user->user = $request->input('login');
+        $user->password = password_hash($request->input('password'),PASSWORD_DEFAULT);
 
         try {
             // On crée l'utilisateur dans la BDD
-            $user->create();
+            $user->save();
         }
-        catch (\PDOException $e) {
-            // Si erreur lors de la création de l'objet PDO
-            // (déclenchée par MyPDO::pdo())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('signup');
-        }
-        catch (\Exception $e) {
-            // Si erreur durant l'exécution de la requête
-            // (déclenchée par le throw de $user->create())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('signup');
+        catch (\Illuminate\Database\QueryException $e) {
+            return redirect('signup')->with('message','This login is still used. Please choose another one.');
         }
 
-        /******************************************************************************
-         * Si tout est ok, on indique que le compte est crée et on se rend sur signin.php
-         */
-        $request->session()->put('message', "Account created! Now, signin.");
-        return redirect('signin');
+        // Si tout est ok, on indique que le compte est crée et on se rend sur signin
+        return redirect('signin')->with('message',"Account created! Now, signin.");
     }
 
     /**
@@ -169,54 +120,21 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function changepassword( Request $request ){
+// On vérifie qu'on a bien reçu les données en POST
+        if ( !$request->has(['newpassword','confirmpassword']) )
+            return redirect('admin/formpassword')->with('message',"Some POST data are missing.");
 
-
-        // On reset les messages
-        $request->session()->forget('message');
-
-        // On vérifie qu'on a bien reçu les données en POST
-        if ( !($request->has('newpassword')&&$request->has('confirmpassword')) )
-        {
-            $request->session()->put('message', "Some POST data are missing.");
-            return redirect('formpassword');
-        }
-
-        // On les sécurise les données POST.
-        $login           = $request->session()->get('user');
-        $newpassword     = htmlspecialchars($request->get('newpassword'));
-        $confirmpassword = htmlspecialchars($request->get('confirmpassword'));
-
-        // On s'assure que les 2 mts de passes corrspondent
-        if ( $newpassword != $confirmpassword )
-        {
-            $request->session()->put('message', "Error: passwords are different.");
-            return redirect('formpassword');
-        }
+        // On s'assure que les 2 mots de passes correspondent
+        if ( $request->input('newpassword') != $request->input('confirmpassword') )
+            return redirect('admin/formpassword')->with('message',"Error: passwords are different.");
 
         //On crée l'utilisateur
-        $user = new MyUser($login);
+        $user = UserEloquent::where('user',$request->session()->get('user'))->first();
+        $user->password = password_hash($request->input('newpassword'),PASSWORD_DEFAULT);
+        $user->save();
 
-        try {
-            $user->changePassword($newpassword);
-        }
-        catch (\PDOException $e) {
-            // Si erreur lors de la création de l'objet PDO
-            // (déclenchée par MyPDO::pdo())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('admin/formpassword');
-        }
-        catch (\Exception $e) {
-            // Si erreur durant l'exécution de la requête
-            // (déclenchée par le throw de $user->changePassword())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('admin/formpassword');
-        }
-
-        /******************************************************************************
-         * Si tout est ok, on retourne sur welcome.php
-         */
-        $request->session()->put('message', "Password successfully updated.");
-        return redirect('admin/welcome');
+        // Si tout est ok, on retourne sur welcome
+        return redirect('admin/welcome')->with('message',"Password successfully updated.");
     }
     /**
      * Show the deleteuser page
@@ -225,35 +143,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function deleteuser( Request $request ){
-        // On reset les messages
-        $request->session()->forget('message');
+        // On détruit l'utilisateur de la BDD
+        UserEloquent::destroy($request->session()->get('user'));
 
-        $login = $request->session()->get('user');
-
-        //On crée l'utilisateur
-        $user = new MyUser($login);
-
-        // Création de l'objet PDO
-        try {
-            // On crée l'utilisateur dans la BDD
-            $user->delete();
-        } catch (\PDOException $e) {
-            // Si erreur lors de la création de l'objet PDO
-            // (déclenchée par MyPDO::pdo())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('admin/welcome');
-        } catch (\Exception $e) {
-            // Si erreur durant l'exécution de la requête
-            // (déclenchée par le throw de $user->create())
-            $request->session()->put('message', $e->getMessage());
-            return redirect('admin/welcome');
-        }
-
-        /******************************************************************************
-         * Si tout est ok, on détruit la session et retourne sur signin.php
-         */
+        // Si tout est ok, on détruit la session et retourne sur signin
         $request->session()->flush();
-        $request->session()->put('message', "Account successfully deleted.");
-        return redirect('signin');
+        return redirect('signin')->with('message',"Account successfully deleted.");
     }
 }
