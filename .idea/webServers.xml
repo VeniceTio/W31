@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3ae99c0c-0c58-42de-bb45-5f85d9727cda" name="infomaniak" url="http://2w0vz.ftp.infomaniak.com">
+        <fileTransfer host="2w0vz.ftp.infomaniak.com" port="21" rootFolder="/web">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

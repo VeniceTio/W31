@@ -12,17 +12,22 @@
 */
 
 Route::group([],function() {
+    session();
     Route::get('/', 'ArticleController@home');
     Route::get('index', 'ArticleController@home');
+    Route::get('article/{id}', 'ArticleController@getArticle');
+
     Route::get('signin', 'UserController@signin');
     Route::get('signup', 'UserController@signup');
     Route::get('home', 'ArticleController@home');
-
-
-
     Route::post('adduser', 'UserController@adduser');
     Route::post('authenticate', 'UserController@authenticate');
 
+    Route::prefix('news')->group(function(){
+        Route::get('categories','ArticleController@getCategories');
+        Route::get('category/{catId}','ArticleController@getArticles');
+        Route::get('category/{catId}/{id}', 'ArticleController@getArticleByCategory');
+    });
 
     Route::prefix('admin')
         ->middleware('myuser.auth')
@@ -37,5 +42,16 @@ Route::group([],function() {
             Route::get('formpassword', 'UserController@formpassword');
             Route::get('welcome', 'UserController@welcome');
         });
+
+
+        Route::prefix('write')
+            ->group(function (){
+                Route::get('newArticle','ArticleController@newArticle');
+                Route::post('createArticle','ArticleController@createArticle');
+                Route::get('myArticles','ArticleController@myArticles');
+                Route::get('modify/{id}','ArticleController@modify');   //à faire
+                Route::get('publish/{id}/{etat}','ArticleController@publish');
+                Route::get('delete/{id}','ArticleController@delete');
+            });
     });
 });

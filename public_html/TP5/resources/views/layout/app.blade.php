@@ -10,9 +10,9 @@
     <main>
 
         @section('content')
-            <h1>@yield('titre')</h1>
+            <h1 style="margin: 4vh;">@yield('titre')</h1>
         @show
-        @include('../shared/message')
+
     </main>
     @include('footer')
 </body>

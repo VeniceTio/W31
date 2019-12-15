@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\article;
 use App\UserEloquent;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function formpassword( Request $request ){
-        return view('formpassword')->with('message',$request->session()->get('message') ?? null);
+        return view('formpassword')
+            ->with('user', $request->session()->get('user') ?? null)
+            ->with('message',$request->session()->get('message') ?? null);
     }
     /**
      * Show the signout page
@@ -106,11 +109,13 @@ class UserController extends Controller
             $user->save();
         }
         catch (\Illuminate\Database\QueryException $e) {
-            return redirect('signup')->with('message','This login is still used. Please choose another one.');
+            return redirect('signup')
+                ->with('message','This login is still used. Please choose another one.');
         }
 
         // Si tout est ok, on indique que le compte est crée et on se rend sur signin
-        return redirect('signin')->with('message',"Account created! Now, signin.");
+        return redirect('signin')
+            ->with('message',"Account created! Now, signin.");
     }
 
     /**
@@ -122,11 +127,15 @@ class UserController extends Controller
     public function changepassword( Request $request ){
 // On vérifie qu'on a bien reçu les données en POST
         if ( !$request->has(['newpassword','confirmpassword']) )
-            return redirect('admin/formpassword')->with('message',"Some POST data are missing.");
+            return redirect('admin/formpassword')
+                ->with('user', $request->session()->get('user') ?? null)
+                ->with('message',"Some POST data are missing.");
 
         // On s'assure que les 2 mots de passes correspondent
         if ( $request->input('newpassword') != $request->input('confirmpassword') )
-            return redirect('admin/formpassword')->with('message',"Error: passwords are different.");
+            return redirect('admin/formpassword')
+                ->with('user', $request->session()->get('user') ?? null)
+                ->with('message',"Error: passwords are different.");
 
         //On crée l'utilisateur
         $user = UserEloquent::where('user',$request->session()->get('user'))->first();
@@ -134,7 +143,9 @@ class UserController extends Controller
         $user->save();
 
         // Si tout est ok, on retourne sur welcome
-        return redirect('admin/welcome')->with('message',"Password successfully updated.");
+        return redirect('admin/welcome')
+            ->with('user', $request->session()->get('user') ?? null)
+            ->with('message',"Password successfully updated.");
     }
     /**
      * Show the deleteuser page
@@ -143,6 +154,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function deleteuser( Request $request ){
+        article::where('Publié',0)->delete();
         // On détruit l'utilisateur de la BDD
         UserEloquent::destroy($request->session()->get('user'));
 
