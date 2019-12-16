@@ -11,7 +11,7 @@
 			Welcome on your account.
 		</p>
 		<ul class="liste">
-            <li style="list-style-type: none"><a href="write/myArticles" class="button">My Articles.</a></li>
+            <li style="list-style-type: none"><a href="/admin/game/myGames" class="button">My Games.</a></li>
 			<li style="list-style-type: none"><a href="formpassword" class="button">Change password.</a></li>
 			<li style="list-style-type: none"><a href="deleteuser" class="button">Delete my account.</a></li>
             <li style="list-style-type: none"><a href="signout" class="button">Sign out.</a></li>

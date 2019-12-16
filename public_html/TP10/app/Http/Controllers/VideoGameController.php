@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\UserEloquent;
 use App\VideoGame;
 use Illuminate\Http\Request;
 
@@ -17,9 +18,14 @@ class VideoGameController extends Controller
         if (!$request->has(['name', 'url','desc'])) {
             return redirect('home')->with('error_message', 'Some POST data are missing.');
         }
+        try{
+            $id = UserEloquent::where('user','=',$request->session()->get('user'))->firstOrFail();
+        } catch ( \Illuminate\Database\Eloquent\ModelNotFoundException $e ) {
+            return redirect('home')->with('message','Error category not found.');
+        }
 
         $titre = $request->input('name');
-        $author = $request->session()->get('user_id');
+        $author = $id->id;
         $url = $request->input('url');
         $desc = $request->input('desc');
 
@@ -41,9 +47,9 @@ class VideoGameController extends Controller
 
         return redirect('/admin/write/myArticles');
     }
-    public function myArticles(Request $request){
-        $articles = Games::where('Auteur',$request->session()->get('user'))->get();
-        return view('myArticles')
+    public function myGames(Request $request){
+        $articles = VideoGame::where('owner',$request->session()->get('user_id'))->get();
+        return view('myGames')
             ->with('articles',$articles)
             ->with('user', $request->session()->get('user') ?? null);
     }
