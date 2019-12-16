@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\article;
+use App\Games;
 use App\Categories;
 use Illuminate\Http\Request;
 use PhpParser\Node\Scalar\String_;
@@ -11,8 +11,8 @@ class ArticleController extends Controller
 {
     public function home( Request $request )
     {
-        $articles = article::where('Publié','=', 1)->orderBy('Date_Publication','DESC')->limit(3)->get();
-        $Allarticles = article::where('Publié','=', 1)->orderBy('Date_Publication','DESC')->get();
+        $articles = Games::where('Publié','=', 1)->orderBy('Date_Publication','DESC')->limit(3)->get();
+        $Allarticles = Games::where('Publié','=', 1)->orderBy('Date_Publication','DESC')->get();
         if(!empty($articles)) {
             return view('home')
                 ->with('user', $request->session()->get('user') ?? null)
@@ -25,7 +25,7 @@ class ArticleController extends Controller
     }
     public function getArticle( Request $request, $id ){
         try {
-            $article = article::where('id', $id)->firstOrFail();
+            $article = Games::where('id', $id)->firstOrFail();
         } catch ( \Illuminate\Database\Eloquent\ModelNotFoundException $e ) {
             return redirect('home')->with('message','Error article not found.');
         }
@@ -48,7 +48,7 @@ class ArticleController extends Controller
 
     public function getArticles( Request $request, $id){
         try {
-            $articles = article::where('Rubrique',"=", $id)->where('Publié','1')->get();
+            $articles = Games::where('Rubrique',"=", $id)->where('Publié','1')->get();
         } catch ( \Illuminate\Database\Eloquent\ModelNotFoundException $e ) {
             return redirect('home')->with('message','Error article not found.');
         }
@@ -60,7 +60,7 @@ class ArticleController extends Controller
 
     public function getArticleByCategory( Request $request, $catId, $id ){
         try {
-            $article = article::where('id', $id)->where('Publié','1')->firstOrFail();
+            $article = Games::where('id', $id)->where('Publié','1')->firstOrFail();
         } catch ( \Illuminate\Database\Eloquent\ModelNotFoundException $e ) {
             return redirect('home')->with('message','Error article not found.');
         }
@@ -94,7 +94,7 @@ class ArticleController extends Controller
         $publish = '0';
         $rubric = $id->id;
 
-        $article = new article();
+        $article = new Games();
         $article->Titre = $titre;
         $article->Rubrique = $rubric;
         $article->Auteur = $author;
@@ -115,21 +115,21 @@ class ArticleController extends Controller
         return redirect('/admin/write/myArticles');
     }
     public function myArticles(Request $request){
-        $articles = article::where('Auteur',$request->session()->get('user'))->get();
+        $articles = Games::where('Auteur',$request->session()->get('user'))->get();
         return view('myArticles')
             ->with('articles',$articles)
             ->with('user', $request->session()->get('user') ?? null);
     }
     public function publish(Request $request,$id,$etat){
-        article::where('id',$id)->update(['Publié' => $etat]);
-        $articles = article::where('Auteur',$request->session()->get('user'))->get();
+        Games::where('id',$id)->update(['Publié' => $etat]);
+        $articles = Games::where('Auteur',$request->session()->get('user'))->get();
         return view('myArticles')
             ->with('articles',$articles)
             ->with('user', $request->session()->get('user') ?? null);
     }
     public function delete(Request $request, $id){
-        article::where('id',$id)->delete();
-        $articles = article::where('Auteur',$request->session()->get('user'))->get();
+        Games::where('id',$id)->delete();
+        $articles = Games::where('Auteur',$request->session()->get('user'))->get();
         return view('myArticles')
             ->with('articles',$articles)
             ->with('user', $request->session()->get('user') ?? null);

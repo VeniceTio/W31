@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\article;
+use App\Games;
 use App\UserEloquent;
 use Illuminate\Http\Request;
 
@@ -55,7 +55,8 @@ class UserController extends Controller
      */
     public function welcome( Request $request ){
         return view('welcome')->with(['message' =>$request->session()->get('message') ?? null,
-            'user' =>$request->session()->get('user')]);
+            'user' =>$request->session()->get('user'),'user_id' =>$request->session()->get('user_id'),
+            'age' => $request->session()->get('age')]);
     }
     /**
      * Show the authenticate page
@@ -81,8 +82,8 @@ class UserController extends Controller
             return redirect('signin')->with('message','Wrong password.');
 
         // Si tout est ok, on se connecte et se rend sur welcome
-        $request->session()->put('user',$user->user);
-        return redirect('admin/welcome');
+        $request->session()->put(['user' => $user->user,'user_id' => $user->id ]);
+        return redirect('admin/welcome')->with('age',$user->age);
     }
 
     /**
@@ -93,7 +94,7 @@ class UserController extends Controller
      */
     public function adduser( Request $request ){
         // On vérifie qu'on a bien reçu les données en POST
-        if ( !$request->has(['login','password','confirm']) )
+        if ( !$request->has(['login','password','confirm','age']) )
             return redirect('signup')->with('message',"Some POST data are missing.");
 
         if ( $request->input('password') !== $request->input('confirm') )
@@ -103,6 +104,7 @@ class UserController extends Controller
         $user = new UserEloquent();
         $user->user = $request->input('login');
         $user->password = password_hash($request->input('password'),PASSWORD_DEFAULT);
+        $user->age = $request->input('age');
 
         try {
             // On crée l'utilisateur dans la BDD
@@ -147,6 +149,20 @@ class UserController extends Controller
             ->with('user', $request->session()->get('user') ?? null)
             ->with('message',"Password successfully updated.");
     }
+    public function changeage( Request $request ){
+        if ( !$request->has(['newage']) ){
+            return redirect('admin/formpassword')
+                ->with('user', $request->session()->get('user') ?? null)
+                ->with('message',"Some POST data are missing.");
+        }
+        $age = $request->get('newage');
+        UserEloquent::where('id',$request->session()->get('user_id'))->update(['age' => $age]);
+        // Si tout est ok, on retourne sur welcome
+        return redirect('admin/welcome')
+            ->with('user', $request->session()->get('user') ?? null)
+            ->with('age',$age)
+            ->with('message',"Password successfully updated.");
+    }
     /**
      * Show the deleteuser page
      *
@@ -154,7 +170,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function deleteuser( Request $request ){
-        article::where('Publié',0)->delete();
+        Games::where('Publié',0)->delete();
         // On détruit l'utilisateur de la BDD
         UserEloquent::destroy($request->session()->get('user'));
 

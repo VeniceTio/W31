@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\article;
+use App\Games;
 use App\UserEloquent;
 use Illuminate\Http\Request;
 
@@ -154,7 +154,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function deleteuser( Request $request ){
-        article::where('Publié',0)->delete();
+        Games::where('Publié',0)->delete();
         // On détruit l'utilisateur de la BDD
         UserEloquent::destroy($request->session()->get('user'));
 

@@ -7,6 +7,7 @@
     @parent
         <p>
 			Hello {{ $user ?? 'null'}} !<br>
+            You're {{$age}} !<br>
 			Welcome on your account.
 		</p>
 		<ul class="liste">

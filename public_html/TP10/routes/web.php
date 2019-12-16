@@ -39,10 +39,18 @@ Route::group([],function() {
         Route::group([], function () {
             Route::get('deleteuser', 'UserController@deleteuser');
             Route::post('changepassword', 'UserController@changepassword');
+            Route::post('changeage', 'UserController@changeage');
             Route::get('formpassword', 'UserController@formpassword');
             Route::get('welcome', 'UserController@welcome');
         });
-
+        Route::prefix('game')
+            ->group(function (){
+                Route::get('newGame','VideoGameController@newGame');
+                Route::post('createGame','VideoGameController@createGame');
+                Route::get('myGames','VideoGameController@myGames');
+                Route::get('delete/{id}','VideoGameController@delete');
+                Route::get('modify/{id}','VideoGameController@modify');
+            });
 
         Route::prefix('write')
             ->group(function (){

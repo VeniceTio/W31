@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class article extends Model
+class VideoGame extends Model
 {
-    protected $table = 'articles';
+    protected $table = 'Games';
     protected $primaryKey = 'id';
     protected $keyType = 'BigInt';
-    public $timestamps = true;
+    public $timestamps = false;
 }

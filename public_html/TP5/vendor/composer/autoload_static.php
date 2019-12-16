@@ -427,7 +427,7 @@ class ComposerStaticInit8427aefc3ec5569e20326f106a3b0883
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\UserEloquent' => __DIR__ . '/../..' . '/app/UserEloquent.php',
-        'App\\article' => __DIR__ . '/../..' . '/app/article.php',
+        'App\\Games' => __DIR__ . '/../..' . '/app/article.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',

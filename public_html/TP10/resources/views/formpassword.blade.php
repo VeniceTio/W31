@@ -9,6 +9,11 @@
 			<label for="confirmpassword">Confirm password</label> <input type="password" id="confirmpassword" name="confirmpassword" required>
 			<input type="submit" value="Change my password">
 		</form>
+        <form action="changeage" method="post">
+            @csrf
+            <label for="newage">New age</label>         <input type="number" id="age"     name="newage"     required>
+            <input type="submit" value="Change my age">
+        </form>
 		<p>
 			Go back to <a href="welcome">Home</a>.
 		</p>

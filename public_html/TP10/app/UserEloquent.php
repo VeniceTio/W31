@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserEloquent extends Model
 {
     protected $table = 'UserEloquent';
-    protected $primaryKey = 'user';
-    protected $keyType = 'string';
+    protected $primaryKey = 'id';
+    protected $keyType = 'BigInt';
     public $timestamps = false;
 }
