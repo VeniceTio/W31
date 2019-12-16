@@ -1,0 +1,91 @@
+.panel {
+    margin-top: 5vh;
+    text-align: center;
+}
+.index {
+
+}
+
+.rules {
+    padding: 5vh;
+    background-color: gray;
+    text-align: justify;
+}
+
+.boxChar {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    min-width: 150px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+}
+
+.boxChar a {
+    font-weight: bold;
+    display: block;
+    padding: 30px 0px 30px;
+    width: 20vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-top: 2vw;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    vertical-align: center;
+    min-width: 150px;
+}
+
+.boxChar a:hover{
+    opacity: .7;
+}
+
+.character{
+    flex-grow: 1;
+    height: 35vh;
+    transition: .5s;
+    color: white;
+}
+.character a{
+    text-decoration: none;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    padding-top: 15vh;
+    min-width: 250px;
+}
+.character:hover{
+    opacity: .5;
+    color: black;
+    transition: .5s;
+}
+
+.character:hover a{
+    color:black;
+}
+
+#Clement{
+     background-color: white;
+     background-image: url('../images/ExClement.jpg');
+     background-position: 30% 40%;
+     background-size:cover;
+ }
+#Groupe{
+    background-color: white;
+    background-image: url('../images/ExGroupe.jpg');
+    background-position: center;
+    background-size:cover;
+}
+#Baptiste{
+    background-color: white;
+    background-image: url('../images/ExBaptiste.jpg');
+    background-position: center;
+    background-size:cover;
+}
+
+.news {
+margin: 5vh;
+}

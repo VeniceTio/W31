@@ -1,0 +1,92 @@
+#addUserForm {
+    width: 400px;
+    margin: 10% auto;
+    text-align: center;
+    position: relative;
+}
+
+#addUserForm fieldset {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+    animation: fadeIn 2s 0s;
+}
+/*inputs*/
+#addUserForm input, #addUserForm textarea{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+/*Error message display*/
+#addUserForm p {
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFDDDC;
+    color: #FF0000;
+    font-size: 13px;
+}
+
+#connectUserForm {
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+#connectUserForm fieldset {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+    animation: fadeIn 2s 0s;
+}
+
+#connectUserForm input, #connectUserForm textarea{
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+/*Error message display*/
+#connectUserForm p {
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFDDDC;
+    color: #FF0000;
+    font-size: 13px;
+}
+
+.fs_title {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}

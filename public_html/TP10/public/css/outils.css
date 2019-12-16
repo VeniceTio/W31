@@ -1,0 +1,42 @@
+.arbre {
+    margin-bottom: 2vh;
+}
+
+.panel {
+    margin: 2vh auto 2vh auto;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 80vw;
+}
+
+.button {
+    margin: 2vh;
+    padding: 1vh;
+    border: orangered solid 2px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 10vw;
+    background-color: darkorange;
+    min-width: 80px;
+}
+.button a{
+    font-size: 2vh;
+    color: #505050;
+    text-transform: uppercase;
+}
+
+.nocontent {
+    list-style-type: none;
+    margin-top: 30vh;
+    font-size: xx-large;
+    font-weight: bold;
+    color: lightslategrey;
+}
+
+.someone:hover{
+    height: 500px;
+    width: 500px;
+}

@@ -1,0 +1,138 @@
+.arbre {
+    margin-bottom: 2vh;
+}
+main {
+    text-align: center;
+}
+.panel {
+    margin: 2vh auto 2vh auto;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 80vw;
+}
+
+.liste {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.liste li {
+    margin: 2vh;
+}
+
+.category {
+    font-weight: bold;
+    display: block;
+    padding: 2vh;
+    margin-top: 2vh;
+    width: 24vw;
+    height: 7vh;
+    margin: 1vh;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: #ea622a;
+    font-size: 1.5rem;
+    vertical-align: center;
+    min-width: 230px;
+}
+
+.subject {
+    font-weight: bold;
+    display: block;
+    padding: 2vh;
+    margin:0;
+    width: 48vw;
+    height: 7vh;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background-color: #ea622a;
+    font-size: 1.5rem;
+    vertical-align: center;
+    min-width: 400px;
+}
+.option {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+.option a {
+    background-color: #cb972d;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    height: 3vh;
+    border: 1px solid darkgray;
+    flex-grow: 1;
+}
+
+.category:hover{
+    opacity: 70%;
+}
+
+.subject:hover{
+    opacity: 70%;
+}
+
+.message {
+    text-align: left;
+    padding: 2vh 25vh 2vh 2vh;
+    margin-top: 2vh;
+}
+
+.message:first-child{
+    background-color: #d7d7d7;
+    border: gainsboro 1px solid;
+    font-size: x-large;
+    margin-bottom: 2vh;
+}
+.message:last-child{
+    background-color: #e3e3e3;
+    border: gainsboro 1px solid;
+}
+
+.reponse {
+    text-align: left;
+    padding: 2vh 25vh 2vh 2vh;
+    background-color: #e6e6e6;
+    border: lightslategrey 1px solid;
+}
+
+.button {
+    margin: 5vh;
+    padding: 1vh;
+    border: #b64901 solid 2px;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    width: 10vw;
+    font-weight: bold;
+    background-color: #f89461;
+    min-width: 80px;
+}
+.button a{
+    font-size: 2vh;
+    margin: 4vh;
+    color: #505050;
+    text-transform: uppercase;
+}
+
+.option a:hover {
+    opacity: 70%;
+}
+.option a:last-child {
+    background-color: red;
+}
+.nocontent {
+    list-style-type: none;
+    margin-top: 30vh;
+    font-size: xx-large;
+    font-weight: bold;
+    color: lightslategrey;
+}
