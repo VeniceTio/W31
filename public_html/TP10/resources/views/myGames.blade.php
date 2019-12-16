@@ -9,6 +9,7 @@
         <ul class="liste">
             @forelse($games as $game)
                 <li style="list-style-type: none">
+                    <img href="{{ URL::asset('images/{{$game->url}}') }}">"
                     <a href="#" class="subject" >
                         {{ $game->Nom}}
                     </a>
