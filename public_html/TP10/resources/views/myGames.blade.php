@@ -7,19 +7,14 @@
     <a href="/admin/write/newArticle" class="button" >Ajouter un sujet</a>
     <section>
         <ul class="liste">
-            @forelse($articles as $article)
+            @forelse($games as $game)
                 <li style="list-style-type: none">
                     <a href="#" class="subject" >
-                        {{ $article->Titre}}
+                        {{ $game->Nom}}
                     </a>
                     <div class="option">
-                        @if($article->Publié == '0')
-                            <a href="/admin/write/publish/{{$article->id}}/1" style="background-color: red">Unpublish</a>
-                        @else
-                            <a href="/admin/write/publish/{{$article->id}}/0" style="background-color: green">Publish</a>
-                        @endif
-                        <a href="/admin/write/modify/{{$article->id}}">Modify Content</a>
-                        <a href="/admin/write/delete/{{$article->id}}">Delete</a>
+                        <a href="/admin/game/modify/{{$game->id}}">Modify Content</a>
+                        <a href="/admin/game/delete/{{$game->id}}">Delete</a>
                     </div>
                 </li>
 

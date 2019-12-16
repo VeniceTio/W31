@@ -48,9 +48,16 @@ class VideoGameController extends Controller
         return redirect('/admin/write/myArticles');
     }
     public function myGames(Request $request){
-        $articles = VideoGame::where('owner',$request->session()->get('user_id'))->get();
+        $games = VideoGame::where('owner',$request->session()->get('user_id'))->get();
         return view('myGames')
-            ->with('articles',$articles)
+            ->with('games',$games)
+            ->with('user', $request->session()->get('user') ?? null);
+    }
+    public function delete(Request $request, $id){
+        VideoGame::where('id',$id)->delete();
+        $games = VideoGame::where('owner',$request->session()->get('user_id'))->get();
+        return view('myGames')
+            ->with('games',$games)
             ->with('user', $request->session()->get('user') ?? null);
     }
 }
