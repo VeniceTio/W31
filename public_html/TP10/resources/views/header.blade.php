@@ -7,7 +7,7 @@
             <!--<button class="dropbtn">Dropdown</button>-->
             <div class="dropdown-content">
                 <a href="/admin/welcome">Compte</a>
-                <a href="/admin/write/newArticle">Créer un article</a>
+                <a href="/admin/game/newGame">Ajouter un jeu</a>
                 <a href="/admin/signout">Déconnexion</a>
             </div>
         </div>
